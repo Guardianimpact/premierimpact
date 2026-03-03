@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}SMS Opt Out{% endblock %}
+{% block meta_description %}Unsubscribe from SMS text messages from Premier Impact Windows & Roofing.{% endblock %}
+
+{% block content %}
+<section class="pg-hero">
+    <div class="container">
+        <span class="section-label">SMS</span>
+        <h1>Unsubscribe from <span class="g">SMS Messages</span></h1>
+    </div>
+</section>
+
+<section class="sec">
+    <div class="container" style="max-width:560px;">
+        <a href="/" class="link-arrow" style="margin-bottom:32px;display:inline-flex;">&larr; Back to Home</a>
+
+        {% if success %}
+        <div class="optout-confirm">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <h3>You've Been Unsubscribed</h3>
+            <p>You have been successfully unsubscribed from all SMS communications from Premier Impact Windows &amp; Roofing. You will receive no further text messages from us.</p>
+        </div>
+        {% elif not_found %}
+        <div class="optout-error">
+            <h3>Phone Number Not Found</h3>
+            <p>We could not find that phone number in our system. If you believe this is an error, please call us at <a href="tel:+19545551234">(954) 555-1234</a> or email <a href="mailto:info@premierimpactfl.com">info@premierimpactfl.com</a>.</p>
+        </div>
+        {% endif %}
+
+        {% if not success %}
+        <p style="color:var(--text2);line-height:1.7;margin-bottom:28px;">Enter your phone number below to be removed from all SMS communications from Premier Impact Windows &amp; Roofing.</p>
+
+        <form method="POST" action="/optout">
+            <div class="fg">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(954) 555-1234" required>
+            </div>
+            <button type="submit" class="btn btn-charcoal" style="width:100%;justify-content:center;">Unsubscribe</button>
+        </form>
+        {% endif %}
+
+        <a href="/" class="link-arrow" style="margin-top:40px;display:inline-flex;">&larr; Back to Home</a>
+    </div>
+</section>
+{% endblock %}

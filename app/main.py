@@ -40,6 +40,35 @@ async def roofing(request: Request):
     return templates.TemplateResponse("roofing.html", {"request": request, "page": "roofing"})
 
 
+@app.get("/privacy", response_class=HTMLResponse)
+async def privacy(request: Request):
+    return templates.TemplateResponse("privacy.html", {"request": request})
+
+
+@app.get("/terms", response_class=HTMLResponse)
+async def terms(request: Request):
+    return templates.TemplateResponse("terms.html", {"request": request})
+
+
+@app.get("/optout", response_class=HTMLResponse)
+async def optout(request: Request):
+    return templates.TemplateResponse("optout.html", {"request": request})
+
+
+@app.post("/optout", response_class=HTMLResponse)
+async def optout_submit(request: Request, phone: str = Form(...)):
+    import re
+    digits = re.sub(r"\D", "", phone)
+    db = get_supabase()
+    result = db.table("leads").select("id, phone").execute()
+    matched = [r for r in result.data if re.sub(r"\D", "", r.get("phone", "")) == digits]
+    if matched:
+        for row in matched:
+            db.table("leads").update({"sms_consent": False}).eq("id", row["id"]).execute()
+        return templates.TemplateResponse("optout.html", {"request": request, "success": True})
+    return templates.TemplateResponse("optout.html", {"request": request, "not_found": True})
+
+
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     return templates.TemplateResponse("contact.html", {"request": request, "page": "contact"})
@@ -80,6 +109,7 @@ async def submit_lead(
     service_interest: str = Form(...),
     best_time: str = Form(""),
     wants_financing: str = Form(""),
+    sms_consent: str = Form(""),
     source_page: str = Form(""),
     utm_source: str = Form(""),
     utm_medium: str = Form(""),
@@ -94,6 +124,7 @@ async def submit_lead(
         "service_interest": service_interest,
         "best_time": best_time,
         "wants_financing": wants_financing == "on",
+        "sms_consent": sms_consent == "on",
         "source_page": source_page,
         "utm_source": utm_source,
         "utm_medium": utm_medium,
