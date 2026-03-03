@@ -8,17 +8,60 @@
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
                 <span class="section-label">Admin Panel</span>
-                <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem);">Quote <span class="gold">Submissions</span></h1>
+                <h1 style="font-size: clamp(1.75rem, 4vw, 2.5rem);">Dashboard</h1>
             </div>
             <a href="/admin/logout" class="btn btn-outline-dark" style="padding: 10px 24px; font-size: 0.72rem;">Logout</a>
         </div>
     </div>
 </section>
 
+<section style="padding: 40px 0 40px;">
+    <div class="container">
+        <h2 style="font-size: 1.4rem; margin-bottom: 8px;">Assessment Leads</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+            Total: <strong style="color: var(--text-primary);">{{ leads|length }}</strong>
+        </p>
+
+        {% if leads %}
+        <div style="overflow-x: auto;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Service</th>
+                        <th>Best Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in leads %}
+                    <tr>
+                        <td style="white-space: nowrap;">{{ l.created_at[:10] if l.created_at else 'N/A' }}</td>
+                        <td>{{ l.first_name }} {{ l.last_name }}</td>
+                        <td style="white-space: nowrap;">{{ l.phone }}</td>
+                        <td style="max-width: 200px;">{{ l.address or '—' }}</td>
+                        <td>{{ l.service }}</td>
+                        <td>{{ l.best_time or '—' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div style="text-align: center; padding: 40px 0; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 6px;">
+            <p>No assessment leads yet.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
 <section style="padding: 40px 0 80px;">
     <div class="container">
+        <h2 style="font-size: 1.4rem; margin-bottom: 8px;">Quote Requests (Email Form)</h2>
         <p style="color: var(--text-secondary); margin-bottom: 20px;">
-            Total submissions: <strong style="color: var(--text-primary);">{{ quotes|length }}</strong>
+            Total: <strong style="color: var(--text-primary);">{{ quotes|length }}</strong>
         </p>
 
         {% if quotes %}
@@ -49,9 +92,8 @@
             </table>
         </div>
         {% else %}
-        <div style="text-align: center; padding: 80px 0; color: var(--text-secondary);">
-            <h3 style="margin-bottom: 8px;">No submissions yet</h3>
-            <p>Quote requests will appear here when customers submit the contact form.</p>
+        <div style="text-align: center; padding: 40px 0; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 6px;">
+            <p>No email quote requests yet.</p>
         </div>
         {% endif %}
     </div>

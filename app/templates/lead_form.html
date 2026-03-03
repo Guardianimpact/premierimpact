@@ -1,0 +1,54 @@
+<!-- Inline Lead Form Component -->
+<div id="leadForm{{ form_id|default('') }}">
+    <form id="leadFormEl{{ form_id|default('') }}" onsubmit="return submitLead(event, '{{ form_id|default('') }}')">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="first_name{{ form_id|default('') }}">First Name</label>
+                <input type="text" id="first_name{{ form_id|default('') }}" name="first_name" placeholder="John" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="last_name{{ form_id|default('') }}">Last Name</label>
+                <input type="text" id="last_name{{ form_id|default('') }}" name="last_name" placeholder="Smith" required>
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <label for="phone{{ form_id|default('') }}">Phone Number</label>
+            <input type="tel" id="phone{{ form_id|default('') }}" name="phone" placeholder="(954) 555-1234" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+            <label for="address{{ form_id|default('') }}">Property Address</label>
+            <input type="text" id="address{{ form_id|default('') }}" name="address" placeholder="123 Main St, Boca Raton, FL" autocomplete="street-address">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="service{{ form_id|default('') }}">Service Interest</label>
+                <select id="service{{ form_id|default('') }}" name="service" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="Impact Windows">Impact Windows</option>
+                    <option value="Impact Doors">Impact Doors</option>
+                    <option value="Roofing">Roofing</option>
+                    <option value="All of the Above">All of the Above</option>
+                </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 16px;">
+                <label for="best_time{{ form_id|default('') }}">Best Time to Call</label>
+                <select id="best_time{{ form_id|default('') }}" name="best_time">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Morning 8-12">Morning 8-12</option>
+                    <option value="Afternoon 12-5">Afternoon 12-5</option>
+                    <option value="Evening 5-8">Evening 5-8</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 8px;">
+            Book My Free Assessment &rarr;
+        </button>
+    </form>
+    <div id="leadSuccess{{ form_id|default('') }}" style="display: none; text-align: center; padding: 40px 20px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto 16px;">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3 style="margin-bottom: 8px;">Thank You, <span id="leadName{{ form_id|default('') }}"></span>!</h3>
+        <p style="color: var(--text-secondary);">We'll call you within the hour to confirm your assessment.</p>
+    </div>
+</div>

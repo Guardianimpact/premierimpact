@@ -1,8 +1,6 @@
-# Premier Impact
+# Premier Impact Windows & Roofing
 
-**The Silent Guardian of Your Home**
-
-Marketing website for Premier Impact — impact windows, doors, and roofing in South Florida.
+Marketing website for Premier Impact Windows & Roofing — impact windows, doors, and roofing in South Florida.
 
 ## Tech Stack
 

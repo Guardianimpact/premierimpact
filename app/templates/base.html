@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Premier Impact{% endblock %} | Impact Windows, Doors & Roofing</title>
-    <meta name="description" content="{% block meta_description %}Premier Impact — South Florida's trusted provider of impact windows, doors, and roofing. No subcontractors. We measure, order, and install ourselves.{% endblock %}">
+    <title>{% block title %}Premier Impact Windows & Roofing{% endblock %} | South Florida</title>
+    <meta name="description" content="{% block meta_description %}Premier Impact Windows & Roofing — South Florida's trusted provider of impact windows, doors, and roofing. No subcontractors. We measure, order, and install ourselves.{% endblock %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="/" class="nav-logo">
-                Premier <span class="accent">Impact</span>
+                Premier <span class="accent">Impact</span> <span style="font-weight:600;font-size:0.65rem;letter-spacing:0.08em;color:var(--text-secondary);margin-left:2px;">Windows & Roofing</span>
             </a>
             <div class="nav-center" id="navCenter">
                 <a href="/" class="{% if page == 'home' %}active{% endif %}">Home</a>
@@ -55,8 +55,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="nav-logo">Premier <span class="accent">Impact</span></div>
-                    <p class="footer-tagline">The silent guardian of your home. South Florida's trusted provider of impact windows, doors, and roofing.</p>
+                    <div class="nav-logo">Premier <span class="accent">Impact</span> <span style="font-weight:600;font-size:0.65rem;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-left:2px;">Windows & Roofing</span></div>
+                    <p class="footer-tagline">South Florida's trusted provider of impact windows, doors, and roofing solutions. No subcontractors &mdash; ever.</p>
                 </div>
                 <div>
                     <h4>Services</h4>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>&copy; 2026 Premier Impact. Licensed & Insured. South Florida.</span>
+                <span>&copy; 2026 Premier Impact Windows & Roofing. Licensed & Insured. South Florida.</span>
                 <span>Impact Windows, Doors & Roofing</span>
             </div>
         </div>
@@ -117,6 +117,32 @@
         window.addEventListener('scroll', function() {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
         });
+
+        // Lead form AJAX submission
+        function submitLead(e, formId) {
+            e.preventDefault();
+            var form = document.getElementById('leadFormEl' + formId);
+            var data = new FormData(form);
+            var btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Submitting...';
+            btn.disabled = true;
+
+            fetch('/api/lead', { method: 'POST', body: data })
+                .then(function(r) { return r.json(); })
+                .then(function(d) {
+                    if (d.ok) {
+                        document.getElementById('leadName' + formId).textContent = d.first_name;
+                        form.style.display = 'none';
+                        document.getElementById('leadSuccess' + formId).style.display = 'block';
+                    }
+                })
+                .catch(function() {
+                    btn.textContent = 'Book My Free Assessment \u2192';
+                    btn.disabled = false;
+                    alert('Something went wrong. Please call us at (954) 555-1234.');
+                });
+            return false;
+        }
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@ import secrets
 from datetime import datetime, timezone
 
 from fastapi import FastAPI, Request, Form, Depends, HTTPException, status
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
@@ -13,7 +13,7 @@ from app.database import get_supabase
 
 load_dotenv()
 
-app = FastAPI(title="Premier Impact", docs_url=None, redoc_url=None)
+app = FastAPI(title="Premier Impact Windows & Roofing", docs_url=None, redoc_url=None)
 app.add_middleware(SessionMiddleware, secret_key=os.getenv("SESSION_SECRET", secrets.token_hex(32)))
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -71,6 +71,32 @@ async def contact_submit(
     })
 
 
+# --- Lead Form API (AJAX) ---
+
+@app.post("/api/lead")
+async def submit_lead(
+    request: Request,
+    first_name: str = Form(...),
+    last_name: str = Form(...),
+    phone: str = Form(...),
+    address: str = Form(""),
+    service: str = Form(...),
+    best_time: str = Form(""),
+):
+    db = get_supabase()
+    db.table("leads").insert({
+        "first_name": first_name,
+        "last_name": last_name,
+        "phone": phone,
+        "address": address,
+        "service": service,
+        "best_time": best_time,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    }).execute()
+
+    return JSONResponse({"ok": True, "first_name": first_name})
+
+
 # --- Admin Routes ---
 
 def require_admin(request: Request):
@@ -100,11 +126,13 @@ async def admin_dashboard(request: Request):
     if not request.session.get("admin"):
         return RedirectResponse(url="/admin/login", status_code=303)
     db = get_supabase()
-    result = db.table("quotes").select("*").order("created_at", desc=True).execute()
+    quotes = db.table("quotes").select("*").order("created_at", desc=True).execute()
+    leads = db.table("leads").select("*").order("created_at", desc=True).execute()
     return templates.TemplateResponse("admin.html", {
         "request": request,
         "page": "admin",
-        "quotes": result.data,
+        "quotes": quotes.data,
+        "leads": leads.data,
     })
 
 

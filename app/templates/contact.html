@@ -1,61 +1,26 @@
 {% extends "base.html" %}
 
 {% block title %}Get a Quote{% endblock %}
-{% block meta_description %}Request a free quote for impact windows, doors, or roofing from Premier Impact. South Florida's trusted home protection team.{% endblock %}
+{% block meta_description %}Request a free quote for impact windows, doors, or roofing from Premier Impact Windows & Roofing. South Florida's trusted home protection team.{% endblock %}
 
 {% block content %}
 <!-- Page Hero -->
 <section class="page-hero">
     <div class="container">
         <span class="section-label">Contact Us</span>
-        <h1>Get a Free<br><span class="gold">Quote</span></h1>
-        <p>Tell us about your project and we'll get back to you within 24 hours with a personalized estimate.</p>
+        <h1>Schedule Your Free<br><span class="gold">Assessment</span></h1>
+        <p>Our experts come to you. No obligation, no pressure &mdash; just honest answers and a clear path to protecting your home.</p>
     </div>
 </section>
 
-<!-- Contact Form -->
+<!-- Lead Form (Primary) -->
 <section class="contact-section">
     <div class="container">
         <div class="contact-grid">
             <div>
-                {% if success %}
-                <div class="success-message">
-                    <h3>Thank You!</h3>
-                    <p>We've received your request. Our team will contact you within 24 hours.</p>
-                </div>
-                {% endif %}
-
-                <form method="POST" action="/contact">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Smith" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(954) 555-1234" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service" required>
-                            <option value="" disabled selected>Select a service</option>
-                            <option value="Impact Windows">Impact Windows</option>
-                            <option value="Impact Doors">Impact Doors</option>
-                            <option value="Windows & Doors">Windows & Doors</option>
-                            <option value="Roofing">Roofing</option>
-                            <option value="Full Home Protection">Full Home Protection</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details (Optional)</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project — home size, number of windows, specific concerns, etc."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">Submit Quote Request &rarr;</button>
-                </form>
+                <h3 style="margin-bottom: 24px;">Request Your Free Assessment</h3>
+                {% set form_id = "Contact" %}
+                {% include "lead_form.html" %}
             </div>
 
             <div class="contact-info">
@@ -124,6 +89,57 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Still keep a simple quote form for email-based inquiries -->
+<section style="background: var(--bg-light); padding: 80px 0;">
+    <div class="container" style="max-width: 700px;">
+        <div class="section-header center">
+            <span class="section-label">Prefer Email?</span>
+            <h2>Send Us a Message</h2>
+        </div>
+
+        {% if success %}
+        <div class="success-message">
+            <h3>Thank You!</h3>
+            <p>We've received your message. Our team will respond within 24 hours.</p>
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/contact">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_email">Phone Number</label>
+                    <input type="tel" id="phone_email" name="phone" placeholder="(954) 555-1234" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="service_email">Service Interest</label>
+                <select id="service_email" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Impact Windows">Impact Windows</option>
+                    <option value="Impact Doors">Impact Doors</option>
+                    <option value="Windows & Doors">Windows & Doors</option>
+                    <option value="Roofing">Roofing</option>
+                    <option value="Full Home Protection">Full Home Protection</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-charcoal" style="width: 100%; justify-content: center;">Send Message &rarr;</button>
+        </form>
     </div>
 </section>
 {% endblock %}
