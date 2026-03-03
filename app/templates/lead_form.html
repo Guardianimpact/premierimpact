@@ -45,7 +45,7 @@
             <input type="checkbox" name="wants_financing">
             I'm interested in financing options
         </label>
-        <input type="hidden" name="source_page" value="{{ page|default('') }}">
+        <input type="hidden" name="source_page" value="{{ source_override|default(page|default('')) }}">
         <input type="hidden" name="utm_source" value="">
         <input type="hidden" name="utm_medium" value="">
         <input type="hidden" name="utm_campaign" value="">

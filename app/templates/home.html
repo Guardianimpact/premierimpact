@@ -6,17 +6,16 @@
 {% block content %}
 <!-- ===== HERO ===== -->
 <section class="hero">
-    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80');"></div>
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80');"></div>
     <div class="hero-ov"></div>
     <div class="container">
         <div class="hero-grid">
             <div class="hero-txt">
                 <span class="hero-label">South Florida's Premier Choice</span>
-                <h1>Impact Windows, Doors &amp; Roofing</h1>
+                <h1>South Florida's #1 Impact Window &amp; Roofing Company</h1>
                 <p class="hero-sub">
-                    South Florida's most trusted impact window and roofing company.
-                    We measure, order, and install &mdash; one team, one standard, every time.
-                    Financing available from <strong>$87/mo</strong>.
+                    ESW &amp; CWI windows. CertainTeed &amp; West Lake roofing.
+                    No subcontractors. Financing from <strong>$87/mo</strong>.
                 </p>
                 <div class="hero-badges">
                     <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> Licensed & Insured</span>
@@ -25,7 +24,7 @@
                     <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> Free Assessment</span>
                 </div>
             </div>
-            <div class="hero-form">
+            <div class="hero-form" id="hero-form">
                 <h3>Get Your Free Assessment</h3>
                 <p class="form-sub">No obligation. We come to you.</p>
                 {% set form_id = "Hero" %}
@@ -230,7 +229,7 @@
             </div>
         </div>
         <div style="text-align:center;">
-            <a href="/contact" class="btn btn-gold">Get Pre-Approved Today &rarr;</a>
+            <a href="#hero-form" class="btn btn-gold">Get Pre-Approved Today &rarr;</a>
         </div>
     </div>
 </section>
@@ -324,6 +323,22 @@
     </div>
 </section>
 
+<!-- ===== MID-PAGE LEAD FORM ===== -->
+<section class="sec-gold">
+    <div class="container" style="max-width:600px;">
+        <div class="section-hd ctr">
+            <span class="section-label">Limited Time</span>
+            <h2>Book Your Free Assessment Today</h2>
+            <p class="section-sub">Get a custom quote for your home. No obligation, no pressure.</p>
+        </div>
+        <div style="background:var(--white);border-radius:8px;padding:36px;box-shadow:var(--shadow-m);">
+            {% set form_id = "Mid" %}
+            {% set source_override = "homepage_mid" %}
+            {% include "lead_form.html" %}
+        </div>
+    </div>
+</section>
+
 <!-- ===== SERVICE AREA ===== -->
 <section class="sec-alt">
     <div class="container">
@@ -375,7 +390,7 @@
 <!-- ===== CTA BANNER ===== -->
 <section class="cta-ban">
     <div class="container">
-        <h2>Is Your Home Protected?</h2>
+        <h2>Ready for Hurricane Season?</h2>
         <p>Schedule a free in-home assessment. Our experts evaluate your home and recommend the best solution &mdash; no obligation, no pressure.</p>
         <div class="cta-btns">
             <a href="/contact" class="btn btn-gold">Schedule Free Assessment &rarr;</a>
