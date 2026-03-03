@@ -5,28 +5,28 @@
 
 {% block content %}
 <!-- Page Hero -->
-<section class="page-hero">
+<section class="pg-hero">
     <div class="container">
         <span class="section-label">Contact Us</span>
-        <h1>Schedule Your Free<br><span class="gold">Assessment</span></h1>
+        <h1>Schedule Your Free<br><span class="g">Assessment</span></h1>
         <p>Our experts come to you. No obligation, no pressure &mdash; just honest answers and a clear path to protecting your home.</p>
     </div>
 </section>
 
 <!-- Lead Form (Primary) -->
-<section class="contact-section">
+<section class="sec">
     <div class="container">
         <div class="contact-grid">
             <div>
-                <h3 style="margin-bottom: 24px;">Request Your Free Assessment</h3>
+                <h3 style="margin-bottom:24px;">Request Your Free Assessment</h3>
                 {% set form_id = "Contact" %}
                 {% include "lead_form.html" %}
             </div>
 
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
+            <div>
+                <h3 style="margin-bottom:24px;">Get in Touch</h3>
                 <div class="contact-detail">
-                    <div class="contact-detail-icon">
+                    <div class="cd-icon">
                         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                     </div>
                     <div>
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-detail-icon">
+                    <div class="cd-icon">
                         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
                     <div>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-detail-icon">
+                    <div class="cd-icon">
                         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                     </div>
                     <div>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="contact-detail">
-                    <div class="contact-detail-icon">
+                    <div class="cd-icon">
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
                     <div>
@@ -62,27 +62,27 @@
                     </div>
                 </div>
 
-                <div class="why-box">
-                    <h4>Why Choose Us</h4>
-                    <ul>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                            No subcontractors — ever
+                <div style="background:var(--gold-bg);border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:24px;margin-top:24px;">
+                    <h4 style="margin-bottom:12px;">Why Choose Us</h4>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            No subcontractors &mdash; ever
                         </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                        <li style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
                             Free in-home consultations
                         </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                        <li style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
                             Licensed & fully insured
                         </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                            Financing options available
+                        <li style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Financing from $87/mo
                         </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+                        <li style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
                             Written warranty on all work
                         </li>
                     </ul>
@@ -92,37 +92,37 @@
     </div>
 </section>
 
-<!-- Still keep a simple quote form for email-based inquiries -->
-<section style="background: var(--bg-light); padding: 80px 0;">
-    <div class="container" style="max-width: 700px;">
-        <div class="section-header center">
+<!-- Email Quote Form -->
+<section class="sec-alt">
+    <div class="container" style="max-width:700px;">
+        <div class="section-hd ctr">
             <span class="section-label">Prefer Email?</span>
             <h2>Send Us a Message</h2>
         </div>
 
         {% if success %}
-        <div class="success-message">
+        <div class="success-msg">
             <h3>Thank You!</h3>
             <p>We've received your message. Our team will respond within 24 hours.</p>
         </div>
         {% endif %}
 
         <form method="POST" action="/contact">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-                <div class="form-group">
+            <div class="fg-row">
+                <div class="fg">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" placeholder="John Smith" required>
                 </div>
-                <div class="form-group">
+                <div class="fg">
                     <label for="phone_email">Phone Number</label>
                     <input type="tel" id="phone_email" name="phone" placeholder="(954) 555-1234" required>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="fg">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="john@example.com" required>
             </div>
-            <div class="form-group">
+            <div class="fg">
                 <label for="service_email">Service Interest</label>
                 <select id="service_email" name="service" required>
                     <option value="" disabled selected>Select a service</option>
@@ -134,11 +134,11 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="fg">
                 <label for="message">Project Details</label>
                 <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
             </div>
-            <button type="submit" class="btn btn-charcoal" style="width: 100%; justify-content: center;">Send Message &rarr;</button>
+            <button type="submit" class="btn btn-charcoal" style="width:100%;justify-content:center;">Send Message &rarr;</button>
         </form>
     </div>
 </section>

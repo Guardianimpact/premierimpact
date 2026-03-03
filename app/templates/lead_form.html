@@ -1,36 +1,37 @@
 <!-- Inline Lead Form Component -->
 <div id="leadForm{{ form_id|default('') }}">
     <form id="leadFormEl{{ form_id|default('') }}" onsubmit="return submitLead(event, '{{ form_id|default('') }}')">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div class="form-group" style="margin-bottom: 16px;">
+        <div class="fg-row">
+            <div class="fg">
                 <label for="first_name{{ form_id|default('') }}">First Name</label>
                 <input type="text" id="first_name{{ form_id|default('') }}" name="first_name" placeholder="John" required>
             </div>
-            <div class="form-group" style="margin-bottom: 16px;">
+            <div class="fg">
                 <label for="last_name{{ form_id|default('') }}">Last Name</label>
                 <input type="text" id="last_name{{ form_id|default('') }}" name="last_name" placeholder="Smith" required>
             </div>
         </div>
-        <div class="form-group" style="margin-bottom: 16px;">
+        <div class="fg">
             <label for="phone{{ form_id|default('') }}">Phone Number</label>
             <input type="tel" id="phone{{ form_id|default('') }}" name="phone" placeholder="(954) 555-1234" required>
         </div>
-        <div class="form-group" style="margin-bottom: 16px;">
+        <div class="fg">
             <label for="address{{ form_id|default('') }}">Property Address</label>
             <input type="text" id="address{{ form_id|default('') }}" name="address" placeholder="123 Main St, Boca Raton, FL" autocomplete="street-address">
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div class="form-group" style="margin-bottom: 16px;">
+        <div class="fg-row">
+            <div class="fg">
                 <label for="service{{ form_id|default('') }}">Service Interest</label>
-                <select id="service{{ form_id|default('') }}" name="service" required>
+                <select id="service{{ form_id|default('') }}" name="service_interest" required>
                     <option value="" disabled selected>Select</option>
                     <option value="Impact Windows">Impact Windows</option>
                     <option value="Impact Doors">Impact Doors</option>
+                    <option value="Windows & Doors">Windows & Doors</option>
                     <option value="Roofing">Roofing</option>
-                    <option value="All of the Above">All of the Above</option>
+                    <option value="Full Home Protection">Full Home Protection</option>
                 </select>
             </div>
-            <div class="form-group" style="margin-bottom: 16px;">
+            <div class="fg">
                 <label for="best_time{{ form_id|default('') }}">Best Time to Call</label>
                 <select id="best_time{{ form_id|default('') }}" name="best_time">
                     <option value="" disabled selected>Select</option>
@@ -40,15 +41,24 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; margin-top: 8px;">
+        <label class="fg-check">
+            <input type="checkbox" name="wants_financing">
+            I'm interested in financing options
+        </label>
+        <input type="hidden" name="source_page" value="{{ page|default('') }}">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="utm_campaign" value="">
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">
             Book My Free Assessment &rarr;
         </button>
+        <p class="form-privacy">We respect your privacy. No spam, ever.</p>
     </form>
-    <div id="leadSuccess{{ form_id|default('') }}" style="display: none; text-align: center; padding: 40px 20px;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto 16px;">
+    <div id="leadSuccess{{ form_id|default('') }}" class="form-success" style="display:none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2">
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
         </svg>
-        <h3 style="margin-bottom: 8px;">Thank You, <span id="leadName{{ form_id|default('') }}"></span>!</h3>
-        <p style="color: var(--text-secondary);">We'll call you within the hour to confirm your assessment.</p>
+        <h3>Thank You, <span id="leadName{{ form_id|default('') }}"></span>!</h3>
+        <p>We'll call you within the hour to confirm your free assessment.</p>
     </div>
 </div>

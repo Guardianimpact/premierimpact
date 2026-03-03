@@ -1,89 +1,62 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Impact Windows, Doors & Roofing{% endblock %}
+{% block meta_description %}Premier Impact Windows & Roofing — South Florida's trusted provider of impact windows, doors, and roofing. No subcontractors. Free in-home assessment. Financing from $87/mo.{% endblock %}
 
 {% block content %}
 <!-- ===== HERO ===== -->
 <section class="hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80');"></div>
-    <div class="hero-overlay"></div>
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80');"></div>
+    <div class="hero-ov"></div>
     <div class="container">
-        <div class="hero-content">
-            <span class="hero-label">South Florida's Premier Choice</span>
-            <h1>The Silent Guardian<br>of Your Home</h1>
-            <p class="hero-tagline">
-                South Florida's most trusted impact windows, doors, and roofing.
-                Built for the toughest storms. No subcontractors &mdash;
-                we measure, order, and install ourselves.
-            </p>
-            <div class="hero-buttons">
-                <a href="/contact" class="btn btn-gold">Schedule Your Free Assessment &rarr;</a>
-                <a href="/windows-doors" class="btn btn-outline">Explore Solutions</a>
+        <div class="hero-grid">
+            <div class="hero-txt">
+                <span class="hero-label">South Florida's Premier Choice</span>
+                <h1>Impact Windows, Doors &amp; Roofing</h1>
+                <p class="hero-sub">
+                    South Florida's most trusted home protection team.
+                    We measure, order, and install ourselves &mdash; no subcontractors, ever.
+                    Financing available from <strong>$87/mo</strong>.
+                </p>
+                <div class="hero-badges">
+                    <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> Licensed & Insured</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> 500+ Homes</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> A+ BBB</span>
+                    <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> Free Assessment</span>
+                </div>
+            </div>
+            <div class="hero-form">
+                <h3>Get Your Free Assessment</h3>
+                <p class="form-sub">No obligation. We come to you.</p>
+                {% set form_id = "Hero" %}
+                {% include "lead_form.html" %}
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== TRUST BADGES ===== -->
-<div class="trust-strip">
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
     <div class="container">
-        <div class="trust-strip-inner">
-            <div class="trust-badge">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                Licensed & Insured
-            </div>
-            <div class="trust-badge">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                500+ Homes Protected
-            </div>
-            <div class="trust-badge">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                15+ Years Experience
-            </div>
-            <div class="trust-badge">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                A+ BBB Rating
-            </div>
-            <div class="trust-badge">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                Free In-Home Assessment
-            </div>
+        <div class="trust-bar-in">
+            <div class="trust-b">Licensed & Insured</div>
+            <div class="trust-b">500+ Homes Protected</div>
+            <div class="trust-b">15+ Years Experience</div>
+            <div class="trust-b">A+ BBB Rating</div>
+            <div class="trust-b">No Subcontractors</div>
+            <div class="trust-b">Free In-Home Assessment</div>
         </div>
     </div>
 </div>
 
-<!-- ===== STATS ===== -->
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Homes Protected</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">In-House Installation</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">A+</div>
-                <div class="stat-label">BBB Rating</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== WHY US ===== -->
-<section class="why-us">
+<section class="sec">
     <div class="container">
-        <div class="why-us-grid">
-            <div class="why-us-image">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Modern luxury home interior with floor-to-ceiling impact windows" loading="lazy">
+        <div class="why-grid">
+            <div class="why-img">
+                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Modern home with impact windows" loading="lazy">
             </div>
-            <div class="why-us-content">
+            <div class="why-content">
                 <span class="section-label">The Premier Standard</span>
                 <h2>We Measure. We Order.<br>We Install.</h2>
                 <p>
@@ -91,7 +64,7 @@
                     and the peace of mind that comes with absolute accountability. No subcontractors
                     means no finger-pointing, no delays, and no excuses.
                 </p>
-                <ul class="check-list">
+                <ul class="ck-list">
                     <li>
                         <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
                         Laser-measured for a perfect seal every time
@@ -104,38 +77,42 @@
                         <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
                         Energy efficiency that pays for itself over time
                     </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Insurance discounts with full impact protection
+                    </li>
                 </ul>
-                <a href="/contact" class="btn btn-gold">Learn How We're Different &rarr;</a>
+                <a href="/contact" class="btn btn-gold">Schedule Free Assessment &rarr;</a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ===== THREE PILLARS ===== -->
-<section class="pillars">
+<section class="sec-alt">
     <div class="container">
-        <div class="section-header center">
+        <div class="section-hd ctr">
             <span class="section-label">Our Promise</span>
             <h2>Built on Three Pillars</h2>
-            <p class="section-subtitle">Every project is guided by three core principles that set us apart.</p>
+            <p class="section-sub">Every project is guided by three core principles that set us apart.</p>
         </div>
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <div class="pillar-icon">
+        <div class="pill-grid">
+            <div class="pill-card">
+                <div class="pill-icon">
                     <svg viewBox="0 0 48 48"><line x1="6" y1="42" x2="42" y2="42"/><line x1="6" y1="6" x2="6" y2="42"/><line x1="6" y1="14" x2="42" y2="14"/><line x1="6" y1="22" x2="42" y2="22"/><line x1="6" y1="30" x2="42" y2="30"/><line x1="14" y1="6" x2="14" y2="42"/><line x1="22" y1="6" x2="22" y2="42"/></svg>
                 </div>
                 <h3>Precision</h3>
                 <p>Laser-measured accuracy for a perfect seal every time. We don't estimate &mdash; we measure twice and install once.</p>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">
+            <div class="pill-card">
+                <div class="pill-icon">
                     <svg viewBox="0 0 48 48"><path d="M24 4L6 16v14c0 10 8 14 18 18 10-4 18-8 18-18V16L24 4z"/></svg>
                 </div>
                 <h3>Protection</h3>
                 <p>Hurricane-rated materials that meet and exceed Florida Building Code. Certified protection you can trust.</p>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon">
+            <div class="pill-card">
+                <div class="pill-icon">
                     <svg viewBox="0 0 48 48"><path d="M28 4L14 26h10L18 44 34 22H24L28 4z"/></svg>
                 </div>
                 <h3>Performance</h3>
@@ -145,42 +122,84 @@
     </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="services-section">
+<!-- ===== BRANDS ===== -->
+<section class="sec">
     <div class="container">
-        <div class="section-header center">
-            <span class="section-label">What We Do</span>
-            <h2>Our Solutions</h2>
-            <p class="section-subtitle">Complete home protection from a single trusted team.</p>
+        <div class="section-hd ctr">
+            <span class="section-label">Our Partners</span>
+            <h2>Trusted Product Lines</h2>
+            <p class="section-sub">We install only the best products from the industry's most trusted manufacturers.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Modern living room with impact windows" loading="lazy">
+        <div class="brand-grid">
+            <div class="brand-card">
+                <span class="brand-badge">Premium Windows</span>
+                <h3>ESW</h3>
+                <p>Eastern Storm Windows — among the most tested and certified impact windows in the market.</p>
+            </div>
+            <div class="brand-card">
+                <span class="brand-badge">Best Seller</span>
+                <h3>CWI</h3>
+                <p>Industry-leading impact resistance combined with elegant design options for every home.</p>
+            </div>
+            <div class="brand-card">
+                <span class="brand-badge">Shingle Roofs</span>
+                <h3>CertainTeed</h3>
+                <p>Architectural shingles rated for 130+ MPH winds. Landmark series with lasting protection.</p>
+            </div>
+            <div class="brand-card">
+                <span class="brand-badge">Tile Roofs</span>
+                <h3>West Lake Tile</h3>
+                <p>Premium concrete and clay tile systems built for 150+ MPH winds and 50+ year lifespans.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="sec-alt">
+    <div class="container">
+        <div class="section-hd ctr">
+            <span class="section-label">What We Do</span>
+            <h2>Complete Home Protection</h2>
+            <p class="section-sub">From a single trusted team, no subcontractors.</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Impact windows in modern home" loading="lazy">
                 </div>
-                <div class="service-card-body">
+                <div class="svc-card-body">
                     <h3>Impact Windows</h3>
-                    <p>Hurricane-rated windows from ESW and CWI. Custom-measured and installed by our in-house team.</p>
+                    <div class="svc-feat">
+                        <span>ESW</span><span>CWI</span><span>Hurricane Rated</span><span>Energy Star</span>
+                    </div>
+                    <p>Custom-measured and installed by our in-house team. ESW and CWI product lines.</p>
                     <a href="/windows-doors" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Modern home with impact doors" loading="lazy">
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Home with impact doors" loading="lazy">
                 </div>
-                <div class="service-card-body">
+                <div class="svc-card-body">
                     <h3>Impact Doors</h3>
-                    <p>Entry doors, sliding glass doors, and French doors built to withstand Category 5 winds.</p>
+                    <div class="svc-feat">
+                        <span>Entry</span><span>Sliding</span><span>French</span><span>Cat 5</span>
+                    </div>
+                    <p>Entry doors, sliding glass, and French doors built to withstand Category 5 winds.</p>
                     <a href="/windows-doors" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-card-img">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Beautiful modern roof" loading="lazy">
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Roof system on home" loading="lazy">
                 </div>
-                <div class="service-card-body">
+                <div class="svc-card-body">
                     <h3>Roofing</h3>
-                    <p>Full replacements, repairs, and inspections. CertainTeed shingles and West Lake Tile systems.</p>
+                    <div class="svc-feat">
+                        <span>CertainTeed</span><span>West Lake</span><span>Flat</span><span>130+ MPH</span>
+                    </div>
+                    <p>Full replacements, repairs, and inspections. CertainTeed shingles and West Lake Tile.</p>
                     <a href="/roofing" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
@@ -188,33 +207,116 @@
     </div>
 </section>
 
-<!-- ===== INLINE LEAD FORM ===== -->
-<section style="background: var(--charcoal); padding: 80px 0;">
+<!-- ===== FINANCING ===== -->
+<section class="sec-dk">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+        <div class="section-hd ctr">
+            <span class="section-label">Financing Available</span>
+            <h2 style="color:var(--white);">Affordable Home Protection</h2>
+            <p class="section-sub" style="color:rgba(255,255,255,.65);margin:10px auto 0;">Don't let budget stop you from protecting your home. Flexible financing options to fit every situation.</p>
+        </div>
+        <div class="fin-grid">
+            <div class="fin-box">
+                <div class="big">$87</div>
+                <div class="lbl">Per Month Starting</div>
+            </div>
+            <div class="fin-box">
+                <div class="big">$0</div>
+                <div class="lbl">Down Payment Options</div>
+            </div>
+            <div class="fin-box">
+                <div class="big">60s</div>
+                <div class="lbl">Approval in Seconds</div>
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <a href="/contact" class="btn btn-gold">Get Pre-Approved Today &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="sec">
+    <div class="container">
+        <div class="section-hd ctr">
+            <span class="section-label">What Homeowners Say</span>
+            <h2>Trusted Across South Florida</h2>
+        </div>
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="test-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                </div>
+                <p class="test-q">"Premier Impact transformed our home. From measurement to installation, everything was handled perfectly. True professionals who care about quality."</p>
+                <div class="test-author">Michael & Sarah T.</div>
+                <div class="test-loc">Boca Raton, FL</div>
+                <div class="test-svc">Impact Windows & Doors</div>
+            </div>
+            <div class="test-card">
+                <div class="test-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                </div>
+                <p class="test-q">"After the last hurricane season I knew I needed real protection. Premier Impact was the only company I trusted to do it right. Worth every penny."</p>
+                <div class="test-author">Robert K.</div>
+                <div class="test-loc">Coral Springs, FL</div>
+                <div class="test-svc">Full Home Protection</div>
+            </div>
+            <div class="test-card">
+                <div class="test-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+                </div>
+                <p class="test-q">"The team was professional, clean, and incredibly detail-oriented. Our insurance premium dropped significantly after they finished. Highly recommend."</p>
+                <div class="test-author">Jennifer M.</div>
+                <div class="test-loc">Fort Lauderdale, FL</div>
+                <div class="test-svc">Roofing & Windows</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SECOND LEAD FORM ===== -->
+<section class="sec-dk">
+    <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
             <div>
                 <span class="section-label">Free Assessment</span>
-                <h2 style="color: var(--white); margin-bottom: 16px;">Schedule Your Free In-Home Assessment</h2>
-                <p style="color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 24px;">
+                <h2 style="color:var(--white);margin-bottom:16px;">Schedule Your Free In-Home Assessment</h2>
+                <p style="color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:24px;">
                     Our experts come to you. No obligation. No pressure. Just honest answers
-                    and a clear path to protecting your home.
+                    and a clear path forward.
                 </p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); padding: 6px 0; font-size: 0.92rem;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                <ul style="list-style:none;padding:0;">
+                    <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);padding:6px 0;font-size:.92rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
                         Expert evaluation of your property
                     </li>
-                    <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); padding: 6px 0; font-size: 0.92rem;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                    <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);padding:6px 0;font-size:.92rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
                         Custom solution tailored to your home
                     </li>
-                    <li style="display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); padding: 6px 0; font-size: 0.92rem;">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
-                        Transparent pricing — no surprises
+                    <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);padding:6px 0;font-size:.92rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                        Transparent pricing &mdash; no surprises
+                    </li>
+                    <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);padding:6px 0;font-size:.92rem;">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                        Financing from $87/mo available
                     </li>
                 </ul>
             </div>
-            <div style="background: var(--white); border-radius: 8px; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.3);">
+            <div style="background:var(--white);border-radius:8px;padding:36px;box-shadow:var(--shadow-l);">
                 {% set form_id = "Home" %}
                 {% include "lead_form.html" %}
             </div>
@@ -222,63 +324,15 @@
     </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials">
-    <div class="container">
-        <div class="section-header center">
-            <span class="section-label">What Homeowners Say</span>
-            <h2>Trusted Across South Florida</h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                </div>
-                <p class="testimonial-quote">"Premier Impact Windows & Roofing transformed our home. From measurement to installation, everything was handled perfectly. True professionals."</p>
-                <div class="testimonial-author">Michael & Sarah T.</div>
-                <div class="testimonial-location">Boca Raton, FL</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                </div>
-                <p class="testimonial-quote">"After Hurricane Ian I knew I needed real protection. Premier Impact Windows & Roofing was the only company I trusted to do it right."</p>
-                <div class="testimonial-author">Robert K.</div>
-                <div class="testimonial-location">Coral Springs, FL</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-                </div>
-                <p class="testimonial-quote">"The team was professional, clean, and incredibly detail-oriented. Our insurance premium dropped significantly too."</p>
-                <div class="testimonial-author">Jennifer M.</div>
-                <div class="testimonial-location">Fort Lauderdale, FL</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== SERVICE AREA ===== -->
-<section class="service-area">
+<section class="sec-alt">
     <div class="container">
-        <div class="section-header center">
+        <div class="section-hd ctr">
             <span class="section-label">Coverage</span>
             <h2>Proudly Serving South Florida</h2>
         </div>
         <div class="area-grid">
-            <div class="area-column">
+            <div class="area-col">
                 <h3>Palm Beach County</h3>
                 <ul>
                     <li>Boca Raton</li>
@@ -290,7 +344,7 @@
                     <li>Jupiter</li>
                 </ul>
             </div>
-            <div class="area-column">
+            <div class="area-col">
                 <h3>Broward County</h3>
                 <ul>
                     <li>Fort Lauderdale</li>
@@ -302,7 +356,7 @@
                     <li>Weston</li>
                 </ul>
             </div>
-            <div class="area-column">
+            <div class="area-col">
                 <h3>Miami-Dade County</h3>
                 <ul>
                     <li>Miami</li>
@@ -319,12 +373,15 @@
 </section>
 
 <!-- ===== CTA BANNER ===== -->
-<section class="cta-banner">
+<section class="cta-ban">
     <div class="container">
         <h2>Is Your Home Protected?</h2>
-        <p>Schedule a free in-home assessment. Our experts will evaluate your home and recommend the best solution &mdash; no obligation, no pressure.</p>
-        <a href="/contact" class="btn btn-outline-white">Schedule Your Free Assessment</a>
-        <a href="tel:+19545551234" class="cta-phone">(954) 555-1234</a>
+        <p>Schedule a free in-home assessment. Our experts evaluate your home and recommend the best solution &mdash; no obligation, no pressure.</p>
+        <div class="cta-btns">
+            <a href="/contact" class="btn btn-gold">Schedule Free Assessment &rarr;</a>
+            <a href="tel:+19545551234" class="btn btn-outline-w">Call (954) 555-1234</a>
+        </div>
+        <span class="cta-small">Available Monday &ndash; Saturday</span>
     </div>
 </section>
 {% endblock %}
