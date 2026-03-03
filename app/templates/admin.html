@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<section class="page-hero" style="padding-bottom: 40px;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <span class="section-label">Admin Panel</span>
+                <h1>Quote <span class="highlight">Submissions</span></h1>
+            </div>
+            <a href="/admin/logout" class="btn btn-outline" style="padding: 10px 24px; font-size: 0.75rem;">Logout</a>
+        </div>
+    </div>
+</section>
+
+<section style="padding-top: 0;">
+    <div class="container">
+        <p style="color: var(--light-gray); margin-bottom: 24px;">
+            Total submissions: <strong style="color: var(--white);">{{ quotes|length }}</strong>
+        </p>
+
+        {% if quotes %}
+        <div style="overflow-x: auto;">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Service</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for q in quotes %}
+                    <tr>
+                        <td style="white-space: nowrap;">{{ q.created_at[:10] if q.created_at else 'N/A' }}</td>
+                        <td>{{ q.name }}</td>
+                        <td style="white-space: nowrap;">{{ q.phone }}</td>
+                        <td>{{ q.email }}</td>
+                        <td>{{ q.service }}</td>
+                        <td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis;">{{ q.message or '—' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div style="text-align: center; padding: 80px 0; color: var(--light-gray);">
+            <h3 style="margin-bottom: 8px;">No submissions yet</h3>
+            <p>Quote requests will appear here when customers submit the contact form.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

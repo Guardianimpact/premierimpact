@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Premier Impact{% endblock %} | Impact Windows, Doors & Roofing</title>
+    <meta name="description" content="{% block meta_description %}Premier Impact — South Florida's trusted provider of impact windows, doors, and roofing. No subcontractors. We measure, order, and install ourselves.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                Premier <span class="accent">Impact</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/" class="{% if page == 'home' %}active{% endif %}">Home</a>
+                <a href="/windows-doors" class="{% if page == 'windows-doors' %}active{% endif %}">Windows & Doors</a>
+                <a href="/roofing" class="{% if page == 'roofing' %}active{% endif %}">Roofing</a>
+                <a href="/contact" class="nav-cta">Get a Quote</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">Premier <span class="accent">Impact</span></div>
+                    <p>The silent guardian of your home. South Florida's trusted provider of impact windows, doors, and roofing solutions.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/windows-doors">Impact Windows</a></li>
+                        <li><a href="/windows-doors">Impact Doors</a></li>
+                        <li><a href="/roofing">Roofing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/contact">Get a Quote</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>South Florida</li>
+                        <li><a href="tel:+19545551234">(954) 555-1234</a></li>
+                        <li><a href="mailto:info@premierimpactfl.com">info@premierimpactfl.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; {{ 2026 }} Premier Impact. All rights reserved.</span>
+                <span>Licensed & Insured | South Florida</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Get a Quote{% endblock %}
+{% block meta_description %}Request a free quote for impact windows, doors, or roofing from Premier Impact. South Florida's trusted home protection team.{% endblock %}
+
+{% block content %}
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="container">
+        <span class="section-label">Contact Us</span>
+        <h1>Get a Free<br><span class="highlight">Quote</span></h1>
+        <p>
+            Tell us about your project and we'll get back to you within 24 hours
+            with a personalized estimate.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section style="padding-top: 60px;">
+    <div class="container">
+        <div class="contact-grid">
+            <div>
+                {% if success %}
+                <div class="success-message">
+                    <h3>Thank You!</h3>
+                    <p>We've received your request. Our team will contact you within 24 hours.</p>
+                </div>
+                {% endif %}
+
+                <form method="POST" action="/contact">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(954) 555-1234" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="Impact Windows">Impact Windows</option>
+                            <option value="Impact Doors">Impact Doors</option>
+                            <option value="Windows & Doors">Windows & Doors</option>
+                            <option value="Roofing">Roofing</option>
+                            <option value="Full Home Protection">Full Home Protection</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project — home size, number of windows, specific concerns, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Quote Request</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">P</div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+19545551234">(954) 555-1234</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">E</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@premierimpactfl.com">info@premierimpactfl.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">A</div>
+                    <div>
+                        <h4>Service Area</h4>
+                        <p>Broward, Palm Beach & Miami-Dade Counties</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">H</div>
+                    <div>
+                        <h4>Hours</h4>
+                        <p>Monday - Friday: 8am - 6pm<br>Saturday: 9am - 2pm</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; padding: 32px; background: var(--dark); border: 1px solid var(--mid-gray);">
+                    <h4 style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; margin-bottom: 16px;">Why Choose Us</h4>
+                    <ul style="color: var(--light-gray); font-size: 0.9rem; line-height: 2;">
+                        <li>&#10003; No subcontractors — ever</li>
+                        <li>&#10003; Free in-home consultations</li>
+                        <li>&#10003; Licensed & fully insured</li>
+                        <li>&#10003; Financing options available</li>
+                        <li>&#10003; Written warranty on all work</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
