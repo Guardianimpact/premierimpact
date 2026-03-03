@@ -6,7 +6,7 @@
 {% block content %}
 <!-- ===== HERO ===== -->
 <section class="hero">
-    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80');"></div>
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80');"></div>
     <div class="hero-ov"></div>
     <div class="container">
         <div class="hero-grid">
@@ -14,8 +14,9 @@
                 <span class="hero-label">South Florida's Premier Choice</span>
                 <h1>South Florida's #1 Impact Window &amp; Roofing Company</h1>
                 <p class="hero-sub">
-                    ESW &amp; CWI windows. CertainTeed &amp; West Lake roofing.
-                    No subcontractors. Financing from <strong>$87/mo</strong>.
+                    Impact windows, impact doors, and full roof replacements.
+                    ESW &amp; CWI windows. CertainTeed shingles &amp; West Lake tile.
+                    100% in-house installation. Financing from <strong>$87/mo</strong>.
                 </p>
                 <div class="hero-badges">
                     <span><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg> Licensed & Insured</span>
@@ -26,7 +27,7 @@
             </div>
             <div class="hero-form" id="hero-form">
                 <h3>Get Your Free Assessment</h3>
-                <p class="form-sub">No obligation. We come to you.</p>
+                <p class="form-sub">Join 500+ South Florida homeowners &mdash; from Coral Springs to Palm Beach &mdash; who chose Premier Impact.</p>
                 {% set form_id = "Hero" %}
                 {% include "lead_form.html" %}
             </div>
@@ -39,7 +40,7 @@
     <div class="container">
         <div class="trust-bar-in">
             <div class="trust-b">Licensed & Insured</div>
-            <div class="trust-b">500+ Homes Protected</div>
+            <div class="trust-b">500+ Windows & Roofs Installed</div>
             <div class="trust-b">15+ Years Experience</div>
             <div class="trust-b">A+ BBB Rating</div>
             <div class="trust-b">100% In-House Installation</div>
@@ -53,7 +54,7 @@
     <div class="container">
         <div class="why-grid">
             <div class="why-img">
-                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Modern home with impact windows" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Professional installation crew working on home improvement project" loading="lazy">
             </div>
             <div class="why-content">
                 <span class="section-label">The Premier Standard</span>
@@ -121,6 +122,44 @@
     </div>
 </section>
 
+<!-- ===== ROOFING HIGHLIGHT ===== -->
+<section class="sec-gray">
+    <div class="container">
+        <div class="why-grid">
+            <div class="why-img">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80" alt="Beautiful South Florida home with completed tile roof" loading="lazy">
+            </div>
+            <div class="why-content">
+                <span class="section-label">Roofing</span>
+                <h2>A New Roof Changes Everything</h2>
+                <p>
+                    From CertainTeed architectural shingles to West Lake concrete tile &mdash; we handle full roof replacements
+                    and repairs with the same in-house team that installs your windows. One company for your entire home.
+                </p>
+                <ul class="ck-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        CertainTeed Landmark shingle systems
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        West Lake concrete &amp; clay tile
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Full replacement and repair
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Financing available from $87/mo
+                    </li>
+                </ul>
+                <a href="/roofing" class="btn btn-gold">Get a Free Roofing Assessment &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== BRANDS ===== -->
 <section class="sec">
     <div class="container">
@@ -164,41 +203,74 @@
         </div>
         <div class="svc-grid">
             <div class="svc-card">
-                <div class="svc-card-img">
-                    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Impact windows in modern home" loading="lazy">
+                <div class="svc-card-img" style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Suburban Florida home with new impact windows" loading="lazy">
+                    <span style="position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 12px;border-radius:3px;">Most Popular</span>
                 </div>
                 <div class="svc-card-body">
                     <h3>Impact Windows</h3>
-                    <div class="svc-feat">
-                        <span>ESW</span><span>CWI</span><span>Hurricane Rated</span><span>Energy Star</span>
-                    </div>
-                    <p>Custom-measured and installed by our in-house team. ESW and CWI product lines.</p>
+                    <ul style="list-style:none;padding:0;margin:0 0 14px;">
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            ESW &amp; CWI premium systems
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Hurricane Category 5 rated
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Energy efficient Low-E glass
+                        </li>
+                    </ul>
                     <a href="/windows-doors" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
             <div class="svc-card">
-                <div class="svc-card-img">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Home with impact doors" loading="lazy">
+                <div class="svc-card-img" style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Modern impact entry door on Florida home" loading="lazy">
+                    <span style="position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 12px;border-radius:3px;">Hurricane Rated</span>
                 </div>
                 <div class="svc-card-body">
                     <h3>Impact Doors</h3>
-                    <div class="svc-feat">
-                        <span>Entry</span><span>Sliding</span><span>French</span><span>Cat 5</span>
-                    </div>
-                    <p>Entry doors, sliding glass, and French doors built to withstand Category 5 winds.</p>
+                    <ul style="list-style:none;padding:0;margin:0 0 14px;">
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Entry, sliding &amp; French doors
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Multi-point locking systems
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Custom sizes &amp; finishes
+                        </li>
+                    </ul>
                     <a href="/windows-doors" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
             <div class="svc-card">
-                <div class="svc-card-img">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Roof system on home" loading="lazy">
+                <div class="svc-card-img" style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="Beautiful new roof on suburban Florida home" loading="lazy">
+                    <span style="position:absolute;top:12px;left:12px;background:var(--gold);color:var(--white);font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:5px 12px;border-radius:3px;">Full Replacement</span>
                 </div>
                 <div class="svc-card-body">
                     <h3>Roofing</h3>
-                    <div class="svc-feat">
-                        <span>CertainTeed</span><span>West Lake</span><span>Flat</span><span>130+ MPH</span>
-                    </div>
-                    <p>Full replacements, repairs, and inspections. CertainTeed shingles and West Lake Tile.</p>
+                    <ul style="list-style:none;padding:0;margin:0 0 14px;">
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            CertainTeed shingle systems
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            West Lake tile installation
+                        </li>
+                        <li style="display:flex;align-items:center;gap:7px;padding:4px 0;font-size:.88rem;color:var(--text2);">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="var(--gold)" stroke-width="3"/></svg>
+                            Full replacement &amp; repair
+                        </li>
+                    </ul>
                     <a href="/roofing" class="link-arrow">Learn More &rarr;</a>
                 </div>
             </div>
@@ -228,6 +300,7 @@
                 <div class="lbl">Approval in Seconds</div>
             </div>
         </div>
+        <p style="color:rgba(255,255,255,.55);text-align:center;font-size:.92rem;max-width:520px;margin:0 auto 28px;line-height:1.7;">Most homeowners are surprised by how affordable protection can be. Our team will work with your budget to find the right solution for your home.</p>
         <div style="text-align:center;">
             <a href="#hero-form" class="btn btn-gold">Get Pre-Approved Today &rarr;</a>
         </div>
@@ -263,10 +336,10 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
                     <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
                 </div>
-                <p class="test-q">"After the last hurricane season I knew I needed real protection. Premier Impact was the only company I trusted to do it right. Worth every penny."</p>
+                <p class="test-q">"After the last storm I had damage to both my roof and windows. Premier Impact handled everything &mdash; new CertainTeed shingles and ESW windows &mdash; one team, one project. Made my life so much easier."</p>
                 <div class="test-author">Robert K.</div>
                 <div class="test-loc">Coral Springs, FL</div>
-                <div class="test-svc">Full Home Protection</div>
+                <div class="test-svc">Windows & Full Roof Replacement</div>
             </div>
             <div class="test-card">
                 <div class="test-stars">
@@ -345,6 +418,7 @@
         <div class="section-hd ctr">
             <span class="section-label">Coverage</span>
             <h2>Proudly Serving South Florida</h2>
+            <p class="section-sub">Whether you're in a Coral Springs townhome or a Palm Beach estate &mdash; every home deserves premium hurricane protection.</p>
         </div>
         <div class="area-grid">
             <div class="area-col">
