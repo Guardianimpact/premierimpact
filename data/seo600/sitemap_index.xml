@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://premierimpactfl.com/sitemap_main.xml</loc>
+    <loc>https://web-production-b12a.up.railway.app/sitemap_main.xml</loc>
     <lastmod>2026-03-04</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://premierimpactfl.com/sitemap_windows.xml</loc>
+    <loc>https://web-production-b12a.up.railway.app/sitemap_windows.xml</loc>
     <lastmod>2026-03-04</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://premierimpactfl.com/sitemap_doors.xml</loc>
+    <loc>https://web-production-b12a.up.railway.app/sitemap_doors.xml</loc>
     <lastmod>2026-03-04</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://premierimpactfl.com/sitemap_roofing.xml</loc>
+    <loc>https://web-production-b12a.up.railway.app/sitemap_roofing.xml</loc>
     <lastmod>2026-03-04</lastmod>
   </sitemap>
 </sitemapindex>
