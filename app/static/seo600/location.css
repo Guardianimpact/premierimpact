@@ -1,0 +1,418 @@
+/* SEO600 Location Page Styles */
+
+/* Breadcrumb */
+.seo-breadcrumb {
+    padding: 14px 0;
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    font-size: .85rem;
+}
+.seo-breadcrumb a {
+    color: var(--text2, #666);
+    text-decoration: none;
+}
+.seo-breadcrumb a:hover {
+    color: var(--gold, #C9A84C);
+}
+.seo-breadcrumb span {
+    color: var(--charcoal, #2C2C2C);
+    font-weight: 600;
+}
+
+/* Hero */
+.seo-hero {
+    background: var(--charcoal, #2C2C2C);
+    color: var(--white, #fff);
+    padding: 64px 0 48px;
+    text-align: center;
+}
+.seo-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800;
+    margin: 12px 0 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.seo-hero .section-label {
+    color: var(--gold, #C9A84C);
+}
+.seo-hero-sub {
+    color: rgba(255,255,255,.6);
+    font-size: .95rem;
+}
+
+/* Two-column layout */
+.seo-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Main content */
+.seo-main {
+    min-width: 0;
+}
+.seo-section {
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: var(--text2, #666);
+}
+.seo-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 16px;
+}
+.seo-section p {
+    margin-bottom: 14px;
+}
+
+/* Sidebar */
+.seo-sidebar {
+    position: sticky;
+    top: 90px;
+}
+.seo-form-card {
+    background: var(--white, #fff);
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.seo-form-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 8px;
+}
+.seo-form-card p {
+    color: var(--text2, #666);
+    font-size: .88rem;
+    margin-bottom: 16px;
+}
+
+.seo-trust-card {
+    background: #faf9f6;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.seo-trust-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 12px;
+}
+.seo-trust-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.seo-trust-card li {
+    padding: 6px 0;
+    font-size: .88rem;
+    color: var(--text2, #666);
+    border-bottom: 1px solid #eee;
+}
+.seo-trust-card li:last-child {
+    border-bottom: none;
+}
+
+/* Storm Timeline */
+.storm-timeline {
+    background: #faf9f6;
+    border-left: 3px solid var(--gold, #C9A84C);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+}
+.storm-timeline h3 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 12px;
+}
+.storm-event {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: .9rem;
+    color: var(--text2, #666);
+}
+.storm-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold, #C9A84C);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Financing Box */
+.seo-financing-box {
+    background: var(--charcoal, #2C2C2C);
+    color: var(--white, #fff);
+    border-radius: 8px;
+    padding: 28px;
+    margin: 24px 0;
+    text-align: center;
+}
+.seo-financing-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.fin-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.fin-highlights div {
+    display: flex;
+    flex-direction: column;
+}
+.fin-highlights strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--gold, #C9A84C);
+}
+.fin-highlights span {
+    font-size: .8rem;
+    color: rgba(255,255,255,.6);
+    margin-top: 4px;
+}
+
+/* FAQ Accordion */
+.seo-faqs h2 {
+    margin-bottom: 20px;
+}
+.seo-faq-item {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.seo-faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px 20px;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--charcoal, #2C2C2C);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+}
+.seo-faq-q:hover {
+    background: #faf9f6;
+}
+.seo-faq-q svg {
+    transition: transform .2s;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+.seo-faq-item.open .seo-faq-q svg {
+    transform: rotate(180deg);
+}
+.seo-faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+.seo-faq-item.open .seo-faq-a {
+    max-height: 500px;
+}
+.seo-faq-a p {
+    padding: 0 20px 16px;
+    color: var(--text2, #666);
+    font-size: .92rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Nearby Cities */
+.seo-nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+.seo-nearby-link {
+    display: block;
+    padding: 12px 16px;
+    background: #faf9f6;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    color: var(--charcoal, #2C2C2C);
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 500;
+    transition: border-color .2s, background .2s;
+}
+.seo-nearby-link:hover {
+    border-color: var(--gold, #C9A84C);
+    background: #fff;
+}
+
+/* Bottom CTA */
+.seo-bottom-cta {
+    background: var(--charcoal, #2C2C2C);
+    color: var(--white, #fff);
+    padding: 64px 0;
+    text-align: center;
+}
+.seo-bottom-cta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.seo-bottom-cta p {
+    color: rgba(255,255,255,.6);
+    margin-bottom: 28px;
+    font-size: .95rem;
+}
+
+/* Locations Index Grid */
+.seo-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.seo-county-col h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold, #C9A84C);
+}
+.seo-county-col h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+.seo-county-col h2 a:hover {
+    color: var(--gold, #C9A84C);
+}
+.seo-county-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.seo-county-col li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.seo-county-col li strong {
+    display: block;
+    color: var(--charcoal, #2C2C2C);
+    font-size: .92rem;
+    margin-bottom: 4px;
+}
+.seo-city-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+.seo-city-links a {
+    font-size: .78rem;
+    color: var(--gold, #C9A84C);
+    text-decoration: none;
+    font-weight: 600;
+}
+.seo-city-links a:hover {
+    text-decoration: underline;
+}
+
+/* County index cards */
+.seo-county-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.seo-county-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 24px;
+    transition: box-shadow .2s;
+}
+.seo-county-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+}
+.seo-county-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--charcoal, #2C2C2C);
+    margin-bottom: 6px;
+}
+.seo-county-card p {
+    color: var(--text2, #666);
+    font-size: .85rem;
+    margin-bottom: 12px;
+}
+.seo-county-card .seo-city-links {
+    flex-wrap: wrap;
+}
+.btn-sm {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: .78rem;
+    font-weight: 600;
+    border: 1px solid var(--gold, #C9A84C);
+    color: var(--gold, #C9A84C);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+.btn-sm:hover {
+    background: var(--gold, #C9A84C);
+    color: #fff;
+}
+
+/* Mobile responsive */
+@media (max-width: 968px) {
+    .seo-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .seo-sidebar {
+        position: static;
+    }
+    .seo-locations-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .fin-highlights {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .seo-hero {
+        padding: 40px 0 32px;
+    }
+    .seo-nearby-grid {
+        grid-template-columns: 1fr;
+    }
+    .fin-highlights {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .seo-county-list {
+        grid-template-columns: 1fr;
+    }
+}

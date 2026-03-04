@@ -1,4 +1,5 @@
 import os
+import re
 import secrets
 from datetime import datetime, timezone
 
@@ -20,7 +21,21 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
+# Custom Jinja2 filter: slugify (Fix Issue 2)
+def _slugify(value: str) -> str:
+    value = value.lower().strip()
+    value = re.sub(r"[^\w\s-]", "", value)
+    value = re.sub(r"[\s_]+", "-", value)
+    value = re.sub(r"-+", "-", value)
+    return value
+
+templates.env.filters["slugify"] = _slugify
+
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "premier2024")
+
+# --- SEO600 Router ---
+from seo600.router import router as seo600_router
+app.include_router(seo600_router)
 
 
 # --- Page Routes ---
@@ -138,19 +153,69 @@ async def submit_lead(
 
 @app.get("/sitemap.xml")
 async def sitemap():
+    # Serve generated sitemap index if available
+    sitemap_path = os.path.join(BASE_DIR, "..", "data", "seo600", "sitemap_index.xml")
+    if os.path.exists(sitemap_path):
+        with open(sitemap_path, "r") as f:
+            return Response(content=f.read(), media_type="application/xml")
     xml = """<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://web-production-b12a.up.railway.app/</loc><priority>1.0</priority></url>
-  <url><loc>https://web-production-b12a.up.railway.app/windows-doors</loc><priority>0.8</priority></url>
-  <url><loc>https://web-production-b12a.up.railway.app/roofing</loc><priority>0.8</priority></url>
-  <url><loc>https://web-production-b12a.up.railway.app/contact</loc><priority>0.9</priority></url>
+  <url><loc>https://premierimpactfl.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://premierimpactfl.com/windows-doors</loc><priority>0.8</priority></url>
+  <url><loc>https://premierimpactfl.com/roofing</loc><priority>0.8</priority></url>
+  <url><loc>https://premierimpactfl.com/contact</loc><priority>0.9</priority></url>
 </urlset>"""
     return Response(content=xml, media_type="application/xml")
 
 
+@app.get("/sitemap_windows.xml")
+async def sitemap_windows():
+    path = os.path.join(BASE_DIR, "..", "data", "seo600", "sitemap_windows.xml")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404)
+    with open(path, "r") as f:
+        return Response(content=f.read(), media_type="application/xml")
+
+
+@app.get("/sitemap_doors.xml")
+async def sitemap_doors():
+    path = os.path.join(BASE_DIR, "..", "data", "seo600", "sitemap_doors.xml")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404)
+    with open(path, "r") as f:
+        return Response(content=f.read(), media_type="application/xml")
+
+
+@app.get("/sitemap_roofing.xml")
+async def sitemap_roofing():
+    path = os.path.join(BASE_DIR, "..", "data", "seo600", "sitemap_roofing.xml")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404)
+    with open(path, "r") as f:
+        return Response(content=f.read(), media_type="application/xml")
+
+
 @app.get("/robots.txt")
 async def robots():
-    txt = """User-agent: *\nAllow: /\nSitemap: https://web-production-b12a.up.railway.app/sitemap.xml"""
+    domain = os.getenv("SITE_DOMAIN", "premierimpactfl.com")
+    txt = f"""User-agent: *
+Allow: /
+Sitemap: https://{domain}/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /"""
     return Response(content=txt, media_type="text/plain")
 
 

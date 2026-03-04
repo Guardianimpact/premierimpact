@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}{{ content.meta_title }}{% endblock %}
+{% block meta_description %}{{ content.meta_description }}{% endblock %}
+{% block og_title %}{{ content.meta_title }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/seo600/location.css">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impact Doors Installation in {{ city.name }}, FL",
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Premier Impact Windows & Roofing",
+        "telephone": "+19545551234",
+        "areaServed": "{{ city.name }}, FL"
+    },
+    "areaServed": {
+        "@type": "City",
+        "name": "{{ city.name }}",
+        "containedInPlace": { "@type": "State", "name": "Florida" }
+    },
+    "description": "{{ content.meta_description }}"
+}
+</script>
+
+<nav class="seo-breadcrumb">
+    <div class="container">
+        <a href="/">Home</a> &rsaquo;
+        <a href="/locations">Service Areas</a> &rsaquo;
+        <a href="/locations/{{ city.county_slug }}">{{ city.county }}</a> &rsaquo;
+        <span>Impact Doors in {{ city.name }}</span>
+    </div>
+</nav>
+
+<section class="seo-hero">
+    <div class="container">
+        <span class="section-label">Impact Doors</span>
+        <h1>{{ content.h1 }}</h1>
+        <p class="seo-hero-sub">Serving {{ city.name }} and {{ city.county }} &bull; {{ city.wind_zone }} Wind Zone {% if city.hvhz %}&bull; HVHZ Certified{% endif %}</p>
+    </div>
+</section>
+
+<section class="sec">
+    <div class="container">
+        <div class="seo-content-wrapper">
+            <div class="seo-main">
+                <div class="seo-section">{{ content.intro | safe }}</div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_why.h2 }}</h2>
+                    {{ content.section_why.body | safe }}
+                </div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_history.h2 }}</h2>
+                    {{ content.section_history.body | safe }}
+                    {% if city.storms %}
+                    <div class="storm-timeline">
+                        <h3>Storm History for {{ city.name }}</h3>
+                        {% for storm in city.storms %}
+                        <div class="storm-event"><span class="storm-dot"></span><span>{{ storm }}</span></div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_code.h2 }}</h2>
+                    {{ content.section_code.body | safe }}
+                </div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_products.h2 }}</h2>
+                    {{ content.section_products.body | safe }}
+                </div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_cost.h2 }}</h2>
+                    {{ content.section_cost.body | safe }}
+                    <div class="seo-financing-box">
+                        <h3>Financing Available for {{ city.name }} Homeowners</h3>
+                        <div class="fin-highlights">
+                            <div><strong>$87/mo</strong><span>Starting at</span></div>
+                            <div><strong>$0</strong><span>Down payment</span></div>
+                            <div><strong>60s</strong><span>Approval time</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seo-section">
+                    <h2>{{ content.section_insurance.h2 }}</h2>
+                    {{ content.section_insurance.body | safe }}
+                </div>
+
+                <div class="seo-section seo-faqs">
+                    <h2>Frequently Asked Questions About Impact Doors in {{ city.name }}</h2>
+                    {% for faq in content.faqs %}
+                    <div class="seo-faq-item">
+                        <button class="seo-faq-q" onclick="this.parentElement.classList.toggle('open')">
+                            {{ faq.q }}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="seo-faq-a"><p>{{ faq.a }}</p></div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if city.neighboring_cities %}
+                <div class="seo-section seo-nearby">
+                    <h2>Impact Doors in Nearby Cities</h2>
+                    <div class="seo-nearby-grid">
+                        {% for neighbor in city.neighboring_cities %}
+                        <a href="/impact-doors/{{ neighbor|slugify }}" class="seo-nearby-link">Impact Doors in {{ neighbor }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <aside class="seo-sidebar">
+                <div class="seo-form-card">
+                    <h3>Free Impact Door Assessment in {{ city.name }}</h3>
+                    <p>Get a custom quote for your {{ city.name }} home.</p>
+                    {% set form_id = "SEO" %}
+                    {% set source_override = "impact-doors/" + city.slug %}
+                    {% include "lead_form.html" %}
+                </div>
+
+                <div class="seo-trust-card">
+                    <h4>Why Premier Impact Windows & Roofing?</h4>
+                    <ul>
+                        <li>Licensed &amp; Insured</li>
+                        <li>500+ Homes Completed</li>
+                        <li>60+ Years Experience</li>
+                        <li>A+ BBB Rating</li>
+                        <li>100% In-House Installation</li>
+                        <li>ESW &amp; CWI Products</li>
+                    </ul>
+                </div>
+
+                <div class="seo-trust-card">
+                    <h4>{{ city.name }} Quick Facts</h4>
+                    <ul>
+                        <li>County: {{ city.county }}</li>
+                        <li>Wind Zone: {{ city.wind_zone }}</li>
+                        <li>HVHZ: {{ "Yes" if city.hvhz else "No" }}</li>
+                        <li>Avg Home Value: {{ city.avg_home_value }}</li>
+                        <li>ZIP: {{ city.zip }}</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="seo-bottom-cta">
+    <div class="container">
+        <h2>{{ content.cta_headline }}</h2>
+        <p>{{ content.cta_body }}</p>
+        <div class="cta-btns">
+            <a href="/contact" class="btn btn-gold">Schedule Free Assessment &rarr;</a>
+            <a href="tel:+19545551234" class="btn btn-outline-w">Call (954) 555-1234</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
