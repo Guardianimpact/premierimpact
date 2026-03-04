@@ -27,6 +27,60 @@
 }
 </script>
 
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {% for faq in content.faqs %}
+        {
+            "@type": "Question",
+            "name": "{{ faq.q }}",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{ faq.a }}"
+            }
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]
+}
+</script>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://{{ site_domain }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Locations",
+            "item": "https://{{ site_domain }}/locations"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ city.county }}",
+            "item": "https://{{ site_domain }}/locations/{{ city.county_slug }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Impact Doors in {{ city.name }}",
+            "item": "https://{{ site_domain }}/impact-doors/{{ city.slug }}"
+        }
+    ]
+}
+</script>
+
 <nav class="seo-breadcrumb">
     <div class="container">
         <a href="/">Home</a> &rsaquo;

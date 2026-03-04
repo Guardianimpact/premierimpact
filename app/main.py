@@ -31,6 +31,10 @@ def _slugify(value: str) -> str:
 
 templates.env.filters["slugify"] = _slugify
 
+# Make site_domain available in all templates
+SITE_DOMAIN = os.getenv("SITE_DOMAIN", "premierimpactfl.com")
+templates.env.globals["site_domain"] = SITE_DOMAIN
+
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "premier2024")
 
 # --- SEO600 Router ---
@@ -197,25 +201,135 @@ async def sitemap_roofing():
 
 @app.get("/robots.txt")
 async def robots():
-    domain = os.getenv("SITE_DOMAIN", "premierimpactfl.com")
-    txt = f"""User-agent: *
-Allow: /
-Sitemap: https://{domain}/sitemap.xml
+    txt = f"""# Premier Impact Windows & Roofing
+# AI crawlers welcome
 
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Sitemap: https://{SITE_DOMAIN}/sitemap.xml
+
+# AI Search Crawlers - Explicitly Allowed
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /api/
 
-User-agent: CCBot
-Disallow: /
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: anthropic-ai
-Disallow: /"""
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: YouBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /admin/
+Disallow: /api/"""
+    return Response(content=txt, media_type="text/plain")
+
+
+@app.get("/sitemap-html", response_class=HTMLResponse)
+async def sitemap_html(request: Request):
+    from seo600.cities import ALL_CITIES, COUNTY_INFO, get_cities_by_county
+    counties = {}
+    for slug, info in COUNTY_INFO.items():
+        counties[slug] = {
+            "name": info["name"],
+            "cities": sorted(get_cities_by_county(slug), key=lambda c: c["name"]),
+        }
+    return templates.TemplateResponse("seo600/sitemap_html.html", {
+        "request": request,
+        "counties": counties,
+        "page": "sitemap",
+    })
+
+
+@app.get("/llms.txt")
+async def llms_txt():
+    txt = f"""# Premier Impact Windows & Roofing
+> South Florida's trusted provider of impact windows, impact doors, and roofing. "The Kings of Service."
+
+## Company
+- Name: Premier Impact Windows & Roofing
+- Location: South Florida (Broward, Palm Beach, Miami-Dade Counties)
+- Phone: (954) 555-1234
+- Email: info@premierimpactfl.com
+- Website: https://{SITE_DOMAIN}
+
+## Services
+- Impact Windows (ESW & CWI brands) — hurricane-rated, energy efficient, custom-measured
+- Impact Doors (entry, sliding, French) — multi-point locking, custom sizes
+- Roofing (CertainTeed shingles, West Lake tile, flat roofing) — full replacement and repair
+
+## Products
+- ESW (Eastern Storm Windows) — premium impact windows
+- CWI — industry-leading impact resistance with elegant design
+- CertainTeed Landmark — architectural shingles rated 130+ MPH
+- West Lake Tile — concrete and clay tile rated 150+ MPH
+
+## Financing
+- Starting at $87/month
+- $0 down payment options
+- Approval in 60 seconds
+
+## Experience
+- 60+ years of combined experience
+- 500+ homes completed
+- 100% in-house installation (no subcontractors)
+- Licensed & insured
+- A+ BBB rating
+- 4.9/5 average rating from 127 reviews
+
+## Service Areas
+- Palm Beach County: Boca Raton, Delray Beach, Boynton Beach, West Palm Beach, and 60+ more cities
+- Broward County: Fort Lauderdale, Coral Springs, Pembroke Pines, Hollywood, and 65+ more cities
+- Miami-Dade County: Miami, Miami Beach, Aventura, Doral, and 60+ more cities
+
+## Sitemap
+- https://{SITE_DOMAIN}/sitemap.xml
+
+## All Locations
+- https://{SITE_DOMAIN}/locations"""
     return Response(content=txt, media_type="text/plain")
 
 

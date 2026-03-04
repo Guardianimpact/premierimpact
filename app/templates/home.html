@@ -3,6 +3,64 @@
 {% block title %}Impact Windows, Doors & Roofing | The Kings of Service{% endblock %}
 {% block meta_description %}Premier Impact Windows & Roofing — "The Kings of Service." South Florida's trusted provider of impact windows, doors, and roofing. 60+ years of experience. 100% in-house installation. Financing from $87/mo.{% endblock %}
 
+{% block schema_extra %}
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Premier Impact Windows & Roofing",
+    "url": "https://{{ site_domain }}",
+    "logo": "https://{{ site_domain }}/static/images/premier-impact-logo.png",
+    "telephone": "+19545551234",
+    "email": "info@premierimpactfl.com",
+    "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+    },
+    "areaServed": [
+        {
+            "@type": "County",
+            "name": "Broward County",
+            "containedInPlace": { "@type": "State", "name": "Florida" }
+        },
+        {
+            "@type": "County",
+            "name": "Palm Beach County",
+            "containedInPlace": { "@type": "State", "name": "Florida" }
+        },
+        {
+            "@type": "County",
+            "name": "Miami-Dade County",
+            "containedInPlace": { "@type": "State", "name": "Florida" }
+        }
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127"
+    },
+    "sameAs": []
+}
+</script>
+
+<!-- SiteLinksSearchBox / WebSite Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Premier Impact Windows & Roofing",
+    "url": "https://{{ site_domain }}",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://{{ site_domain }}/locations?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- ===== HERO ===== -->
 <section class="hero">

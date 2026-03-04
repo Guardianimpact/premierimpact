@@ -3,6 +3,36 @@
 {% block title %}Roofing{% endblock %}
 {% block meta_description %}Professional roofing in South Florida. CertainTeed shingles, West Lake Tile, and flat roof systems. Installed by our own crew. Financing from $87/mo.{% endblock %}
 
+{% block schema_extra %}
+<!-- Service Schema: Roofing -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Roofing Installation & Repair",
+    "description": "Professional roofing services in South Florida. CertainTeed shingles, West Lake tile, and flat roof systems. Full replacement, repair, and emergency tarping.",
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Premier Impact Windows & Roofing",
+        "telephone": "+19545551234",
+        "url": "https://{{ site_domain }}"
+    },
+    "areaServed": [
+        { "@type": "County", "name": "Broward County" },
+        { "@type": "County", "name": "Palm Beach County" },
+        { "@type": "County", "name": "Miami-Dade County" }
+    ],
+    "offers": {
+        "@type": "Offer",
+        "name": "Free Roof Inspection",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free on-site roof inspection with detailed quote. Financing from $87/mo."
+    }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- Page Hero -->
 <section class="pg-hero-img">

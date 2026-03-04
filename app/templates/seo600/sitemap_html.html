@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}All Pages — Premier Impact Windows & Roofing{% endblock %}
+{% block meta_description %}Complete sitemap of all Premier Impact Windows & Roofing pages. Browse impact windows, impact doors, and roofing services across 200+ South Florida cities.{% endblock %}
+
+{% block content %}
+<section class="sec">
+    <div class="container">
+        <h1>All Pages &mdash; Premier Impact Windows &amp; Roofing</h1>
+        <p style="margin-bottom:32px;color:var(--text2);">Browse all pages on our site, organized by service and location.</p>
+
+        <!-- Core Pages -->
+        <h2>Core Pages</h2>
+        <ul style="margin-bottom:32px;line-height:2;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/windows-doors">Impact Windows &amp; Doors</a></li>
+            <li><a href="/roofing">Roofing</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/locations">All Service Areas</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+
+        <!-- Impact Windows by County -->
+        <h2>Impact Windows</h2>
+        {% for slug, county in counties.items() %}
+        <h3><a href="/locations/{{ slug }}">{{ county.name }}</a></h3>
+        <ul style="columns:2;margin-bottom:24px;line-height:2;">
+            {% for city in county.cities %}
+            <li><a href="/impact-windows/{{ city.slug }}">Impact Windows in {{ city.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <!-- Impact Doors by County -->
+        <h2>Impact Doors</h2>
+        {% for slug, county in counties.items() %}
+        <h3><a href="/locations/{{ slug }}">{{ county.name }}</a></h3>
+        <ul style="columns:2;margin-bottom:24px;line-height:2;">
+            {% for city in county.cities %}
+            <li><a href="/impact-doors/{{ city.slug }}">Impact Doors in {{ city.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <!-- Roofing by County -->
+        <h2>Roofing</h2>
+        {% for slug, county in counties.items() %}
+        <h3><a href="/locations/{{ slug }}">{{ county.name }}</a></h3>
+        <ul style="columns:2;margin-bottom:24px;line-height:2;">
+            {% for city in county.cities %}
+            <li><a href="/roofing/{{ city.slug }}">Roofing in {{ city.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <!-- County Index Pages -->
+        <h2>County Pages</h2>
+        <ul style="margin-bottom:32px;line-height:2;">
+            {% for slug, county in counties.items() %}
+            <li><a href="/locations/{{ slug }}">{{ county.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

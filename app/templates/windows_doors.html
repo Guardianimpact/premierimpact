@@ -3,6 +3,64 @@
 {% block title %}Impact Windows & Doors{% endblock %}
 {% block meta_description %}Premium impact windows and doors from ESW and CWI. Installed by our own certified team in South Florida. Financing from $87/mo.{% endblock %}
 
+{% block schema_extra %}
+<!-- Service Schema: Impact Windows -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impact Window Installation",
+    "description": "Premium impact window installation in South Florida. ESW and CWI hurricane-rated windows, custom-measured and installed by our in-house team.",
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Premier Impact Windows & Roofing",
+        "telephone": "+19545551234",
+        "url": "https://{{ site_domain }}"
+    },
+    "areaServed": [
+        { "@type": "County", "name": "Broward County" },
+        { "@type": "County", "name": "Palm Beach County" },
+        { "@type": "County", "name": "Miami-Dade County" }
+    ],
+    "offers": {
+        "@type": "Offer",
+        "name": "Free In-Home Assessment",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free in-home window assessment with custom quote. Financing from $87/mo."
+    }
+}
+</script>
+
+<!-- Service Schema: Impact Doors -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Impact Door Installation",
+    "description": "Hurricane-rated impact door installation in South Florida. Entry, sliding, and French doors with multi-point locking systems. Custom sizes and finishes.",
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": "Premier Impact Windows & Roofing",
+        "telephone": "+19545551234",
+        "url": "https://{{ site_domain }}"
+    },
+    "areaServed": [
+        { "@type": "County", "name": "Broward County" },
+        { "@type": "County", "name": "Palm Beach County" },
+        { "@type": "County", "name": "Miami-Dade County" }
+    ],
+    "offers": {
+        "@type": "Offer",
+        "name": "Free In-Home Assessment",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free in-home door assessment with custom quote. Financing from $87/mo."
+    }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- Page Hero -->
 <section class="pg-hero-img">

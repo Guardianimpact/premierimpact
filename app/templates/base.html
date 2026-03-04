@@ -10,9 +10,14 @@
     <meta property="og:title" content="{% block og_title %}Premier Impact Windows & Roofing | South Florida{% endblock %}">
     <meta property="og:description" content="South Florida's trusted impact windows, doors & roofing. 100% in-house installation.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://web-production-b12a.up.railway.app{{ request.url.path }}">
+    <meta property="og:url" content="https://{{ site_domain }}{{ request.url.path }}">
     <meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80">
     <meta property="og:locale" content="en_US">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://{{ site_domain }}{{ request.url.path }}">
+
+    {% block extra_head %}{% endblock %}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +36,7 @@
         "@type": "LocalBusiness",
         "name": "Premier Impact Windows & Roofing",
         "description": "The Kings of Service — South Florida's trusted provider of impact windows, doors, and roofing solutions. 100% in-house installation.",
-        "url": "https://web-production-b12a.up.railway.app",
+        "url": "https://{{ site_domain }}",
         "telephone": "+19545551234",
         "email": "info@premierimpactfl.com",
         "areaServed": ["Broward County", "Palm Beach County", "Miami-Dade County"],
@@ -50,6 +55,8 @@
         }
     }
     </script>
+
+    {% block schema_extra %}{% endblock %}
 </head>
 <body>
 
