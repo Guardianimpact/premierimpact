@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Premier Impact Windows & Roofing{% endblock %} | South Florida</title>
-    <meta name="description" content="{% block meta_description %}Premier Impact Windows & Roofing — South Florida's trusted provider of impact windows, doors, and roofing. 100% in-house installation. We measure, order, and install ourselves.{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Premier Impact Windows & Roofing — "The Kings of Service." South Florida's trusted provider of impact windows, doors, and roofing. 100% in-house installation.{% endblock %}">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{% block og_title %}Premier Impact Windows & Roofing | South Florida{% endblock %}">
@@ -20,13 +20,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Premier Impact Windows & Roofing",
-        "description": "South Florida's trusted provider of impact windows, doors, and roofing solutions. 100% in-house installation.",
+        "description": "The Kings of Service — South Florida's trusted provider of impact windows, doors, and roofing solutions. 100% in-house installation.",
         "url": "https://web-production-b12a.up.railway.app",
         "telephone": "+19545551234",
         "email": "info@premierimpactfl.com",
@@ -52,8 +56,8 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-in">
-            <a href="/" class="nav-logo">
-                Premier <span class="a">Impact</span> <span class="sub">Windows & Roofing</span>
+            <a href="/" class="navbar-logo">
+                <img src="/static/images/premier-impact-logo.png" alt="Premier Impact Windows and Roofing" height="60" loading="eager">
             </a>
             <div class="nav-c" id="navCenter">
                 <a href="/" class="{% if page == 'home' %}act{% endif %}">Home</a>
@@ -92,7 +96,10 @@
         <div class="container">
             <div class="ft-grid">
                 <div>
-                    <div class="nav-logo">Premier <span class="a">Impact</span> <span class="sub" style="color:rgba(255,255,255,0.4);">Windows & Roofing</span></div>
+                    <div class="ft-logo">
+                        <img src="/static/images/premier-impact-logo.png" alt="Premier Impact Windows and Roofing" height="70" loading="lazy">
+                    </div>
+                    <p class="ft-tagline">"The Kings of Service"</p>
                     <p class="ft-tag">South Florida's trusted provider of impact windows, doors, and roofing solutions. 100% in-house installation.</p>
                     <div class="ft-social">
                         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
