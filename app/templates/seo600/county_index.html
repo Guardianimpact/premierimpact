@@ -1,7 +1,37 @@
 {% extends "base.html" %}
 
-{% block title %}{{ county_name }} Service Areas | Premier Impact Windows & Roofing{% endblock %}
+{% block title %}{{ county_name }} | Premier Impact FL{% endblock %}
 {% block meta_description %}Premier Impact Windows & Roofing serves {{ cities|length }} cities in {{ county_name }}. Impact windows, doors, and roofing installation.{% endblock %}
+{% block og_description %}Impact windows, doors, and roofing in {{ cities|length }} cities across {{ county_name }}. Free assessments available.{% endblock %}
+
+{% block schema_extra %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://{{ site_domain }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Service Areas",
+            "item": "https://{{ site_domain }}/locations"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ county_name }}",
+            "item": "https://{{ site_domain }}/locations/{{ county_slug }}"
+        }
+    ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="/static/seo600/location.css">

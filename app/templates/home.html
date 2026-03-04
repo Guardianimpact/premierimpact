@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
-{% block title %}Impact Windows, Doors & Roofing | The Kings of Service{% endblock %}
-{% block meta_description %}Premier Impact Windows & Roofing — "The Kings of Service." South Florida's trusted provider of impact windows, doors, and roofing. 60+ years of experience. 100% in-house installation. Financing from $87/mo.{% endblock %}
+{% block title %}#1 Impact Windows, Doors & Roofing | South FL{% endblock %}
+{% block meta_description %}South Florida's top-rated impact window, door, and roofing company. 60+ years experience. 100% in-house installation. Financing from $87/mo.{% endblock %}
+{% block og_description %}South Florida's top-rated impact window, door, and roofing company. 60+ years experience. 100% in-house installation. Financing from $87/mo.{% endblock %}
 
 {% block schema_extra %}
 <!-- Organization Schema -->
@@ -57,6 +58,38 @@
         "target": "https://{{ site_domain }}/locations?q={search_term_string}",
         "query-input": "required name=search_term_string"
     }
+}
+</script>
+
+<!-- Review Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Premier Impact Windows & Roofing",
+    "review": [
+        {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Michael & Sarah T." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Premier Impact transformed our home. From measurement to installation, everything was handled perfectly. True professionals who care about quality.",
+            "datePublished": "2025-01-15"
+        },
+        {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Robert K." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "After the last storm I had damage to both my roof and windows. Premier Impact handled everything — new CertainTeed shingles and ESW windows — one team, one project. Made my life so much easier.",
+            "datePublished": "2025-02-20"
+        },
+        {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Jennifer M." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "The team was professional, clean, and incredibly detail-oriented. Our insurance premium dropped significantly after they finished. Highly recommend.",
+            "datePublished": "2025-03-10"
+        }
+    ]
 }
 </script>
 {% endblock %}

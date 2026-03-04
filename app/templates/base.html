@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Premier Impact Windows & Roofing{% endblock %} | South Florida</title>
-    <meta name="description" content="{% block meta_description %}Premier Impact Windows & Roofing — "The Kings of Service." South Florida's trusted provider of impact windows, doors, and roofing. 100% in-house installation.{% endblock %}">
+    <title>{% block title %}Premier Impact Windows & Roofing | South Florida{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}South Florida impact windows, doors, and roofing. 60+ years experience, 100% in-house installation. Free assessments. (954) 555-1234.{% endblock %}">
+    <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{% block og_title %}Premier Impact Windows & Roofing | South Florida{% endblock %}">
-    <meta property="og:description" content="South Florida's trusted impact windows, doors & roofing. 100% in-house installation.">
+    <meta property="og:description" content="{% block og_description %}South Florida impact windows, doors &amp; roofing. 60+ years experience, 100% in-house installation. Free assessments.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://{{ site_domain }}{{ request.url.path }}">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80">
+    <meta property="og:image" content="{% block og_image %}https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&amp;q=80{% endblock %}">
     <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://{{ site_domain }}{{ request.url.path }}">

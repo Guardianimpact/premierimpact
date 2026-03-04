@@ -55,6 +55,14 @@ def generate_sitemap_index():
         ("roofing", "0.8"),
         ("contact", "0.9"),
         ("locations", "0.7"),
+        ("locations/palm-beach", "0.6"),
+        ("locations/broward", "0.6"),
+        ("locations/miami-dade", "0.6"),
+        ("sitemap-html", "0.3"),
+        ("privacy", "0.2"),
+        ("terms", "0.2"),
+        ("optout", "0.2"),
+        ("llms.txt", "0.1"),
     ]
     main_urls = []
     for path, priority in main_pages:

@@ -25,4 +25,44 @@
     <lastmod>2026-03-04</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/locations/palm-beach</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/locations/broward</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/locations/miami-dade</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/sitemap-html</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/privacy</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/terms</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/optout</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://web-production-b12a.up.railway.app/llms.txt</loc>
+    <lastmod>2026-03-04</lastmod>
+    <priority>0.1</priority>
+  </url>
 </urlset>
