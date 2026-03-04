@@ -5,11 +5,13 @@
 
 {% block content %}
 <!-- Page Hero -->
-<section class="pg-hero">
-    <div class="container">
+<section class="pg-hero-img">
+    <div class="pg-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1920&q=80');"></div>
+    <div class="pg-hero-ov"></div>
+    <div class="container" style="position:relative;z-index:2;">
         <span class="section-label">Roofing Services</span>
-        <h1>Roofing Built<br>for <span class="g">Florida</span></h1>
-        <p>Complete roofing solutions designed to withstand South Florida's hurricanes, heat, and heavy rains. Installed by our own crew.</p>
+        <h1 style="color:var(--white);">Roofing Built<br>for <span class="g">Florida</span></h1>
+        <p style="color:rgba(255,255,255,.75);max-width:540px;line-height:1.7;font-size:1.05rem;">Complete roofing solutions designed to withstand South Florida's hurricanes, heat, and heavy rains. Installed by our own crew.</p>
     </div>
 </section>
 
@@ -21,25 +23,78 @@
             <h2>What We Install</h2>
             <p class="section-sub">We work with the best roofing systems to find the right fit for your home and budget.</p>
         </div>
-        <div class="roof-grid">
-            <div class="roof-card">
-                <h3>CertainTeed Shingles</h3>
-                <p>Architectural and dimensional shingles rated for 130+ MPH winds. CertainTeed's Landmark series delivers lasting protection with a variety of color and style options.</p>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=600&q=80" alt="South Florida home with architectural shingle roof" loading="lazy">
+                </div>
+                <div class="svc-card-body">
+                    <h3>CertainTeed Shingles</h3>
+                    <p>Architectural and dimensional shingles rated for 130+ MPH winds. CertainTeed's Landmark series delivers lasting protection with a variety of color and style options.</p>
+                    <a href="/contact" class="link-arrow">Get a Quote &rarr;</a>
+                </div>
             </div>
-            <div class="roof-card">
-                <h3>West Lake Tile</h3>
-                <p>Premium concrete and clay tile systems that combine classic South Florida aesthetics with extreme durability. Rated for 150+ MPH winds with 50+ year lifespans.</p>
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&q=80" alt="Florida home with concrete tile roof and palm trees" loading="lazy">
+                </div>
+                <div class="svc-card-body">
+                    <h3>West Lake Tile</h3>
+                    <p>Premium concrete and clay tile systems that combine classic South Florida aesthetics with extreme durability. Rated for 150+ MPH winds with 50+ year lifespans.</p>
+                    <a href="/contact" class="link-arrow">Get a Quote &rarr;</a>
+                </div>
             </div>
-            <div class="roof-card">
-                <h3>Flat Roofing</h3>
-                <p>TPO, modified bitumen, and built-up roofing systems for flat and low-slope applications. Energy-reflective options that reduce cooling costs.</p>
+            <div class="svc-card">
+                <div class="svc-card-img">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Modern Florida flat roof commercial building" loading="lazy">
+                </div>
+                <div class="svc-card-body">
+                    <h3>Flat Roofing</h3>
+                    <p>TPO, modified bitumen, and built-up roofing systems for flat and low-slope applications. Energy-reflective options that reduce cooling costs.</p>
+                    <a href="/contact" class="link-arrow">Get a Quote &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Us for Roofing -->
+<section class="sec-alt">
+    <div class="container">
+        <div class="why-grid">
+            <div class="why-img">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80" alt="Beautiful South Florida home with new roof and landscaped yard" loading="lazy">
+            </div>
+            <div class="why-content">
+                <span class="section-label">Why Choose Us</span>
+                <h2>One Team. One Project.<br>Zero Hassle.</h2>
+                <p>Our own certified roofing crew handles every step &mdash; from tear-off to final inspection. No middlemen, no delays, no finger-pointing.</p>
+                <ul class="ck-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        100% in-house installation crew
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Fully permitted &amp; county inspected
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Insurance claims assistance
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Financing from $87/mo
+                    </li>
+                </ul>
+                <a href="/contact" class="btn btn-gold">Schedule Free Roof Inspection &rarr;</a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Services -->
-<section class="sec-alt">
+<section class="sec">
     <div class="container">
         <div class="section-hd ctr">
             <span class="section-label">Our Services</span>
@@ -93,7 +148,7 @@
 </section>
 
 <!-- Process -->
-<section class="sec">
+<section class="sec-gray">
     <div class="container">
         <div class="section-hd ctr">
             <span class="section-label">How It Works</span>

@@ -153,6 +153,9 @@ h3{font-size:clamp(1.1rem,2vw,1.4rem)}
 
 /* ===== PAGE HERO ===== */
 .pg-hero{padding:130px 0 56px;background:var(--off-white);border-bottom:1px solid var(--border-lt)}
+.pg-hero-img{position:relative;padding:140px 0 64px;overflow:hidden}
+.pg-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.pg-hero-ov{position:absolute;inset:0;background:linear-gradient(to right,rgba(26,26,26,.88) 0%,rgba(26,26,26,.65) 50%,rgba(26,26,26,.35) 100%)}
 .pg-hero h1{margin-bottom:10px;font-size:clamp(1.8rem,4.5vw,3rem)}.pg-hero h1 .g{color:var(--gold)}
 .pg-hero p{font-size:1.05rem;color:var(--text2);max-width:540px;line-height:1.7}
 

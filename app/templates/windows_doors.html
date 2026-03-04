@@ -5,22 +5,54 @@
 
 {% block content %}
 <!-- Page Hero -->
-<section class="pg-hero">
-    <div class="container">
+<section class="pg-hero-img">
+    <div class="pg-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80');"></div>
+    <div class="pg-hero-ov"></div>
+    <div class="container" style="position:relative;z-index:2;">
         <span class="section-label">Our Products</span>
-        <h1>Impact Windows<br>& <span class="g">Doors</span></h1>
-        <p>Hurricane-rated products from the industry's most trusted manufacturers. Custom-measured and installed by our in-house team.</p>
+        <h1 style="color:var(--white);">Impact Windows<br>& <span class="g">Doors</span></h1>
+        <p style="color:rgba(255,255,255,.75);max-width:540px;line-height:1.7;font-size:1.05rem;">Hurricane-rated products from the industry's most trusted manufacturers. Custom-measured and installed by our in-house team.</p>
     </div>
 </section>
 
 <!-- Impact Windows -->
 <section class="sec">
     <div class="container">
-        <div class="section-hd">
-            <span class="section-label">Product Lines</span>
-            <h2>Impact Windows</h2>
-            <p class="section-sub">We partner with the best manufacturers to bring you products that exceed Florida Building Code requirements.</p>
+        <div class="why-grid">
+            <div class="why-img">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="South Florida home with large impact windows and stucco exterior" loading="lazy">
+            </div>
+            <div class="why-content">
+                <span class="section-label">Product Lines</span>
+                <h2>Impact Windows</h2>
+                <p>We partner with the best manufacturers to bring you products that exceed Florida Building Code requirements. Every window is custom-measured and installed by our own certified team.</p>
+                <ul class="ck-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        ESW &amp; CWI premium impact systems
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Hurricane Category 5 rated
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Energy Star certified Low-E glass
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Custom sizes for every home
+                    </li>
+                </ul>
+                <a href="/contact" class="btn btn-gold">Get a Free Window Quote &rarr;</a>
+            </div>
         </div>
+    </div>
+</section>
+
+<!-- Window Product Cards -->
+<section class="sec-alt">
+    <div class="container">
         <div class="prod-grid">
             <div class="prod-card">
                 <span class="prod-badge">Premium Line</span>
@@ -49,13 +81,43 @@
 </section>
 
 <!-- Impact Doors -->
+<section class="sec">
+    <div class="container">
+        <div class="why-grid" style="direction:rtl;">
+            <div class="why-img" style="direction:ltr;">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80" alt="Modern Florida home entrance with impact door and palm trees" loading="lazy">
+            </div>
+            <div class="why-content" style="direction:ltr;">
+                <span class="section-label">Entry & Patio</span>
+                <h2>Impact Doors</h2>
+                <p>From grand entryways to expansive sliding glass walls, our doors combine beauty with Category 5 protection. Every door is custom-fitted to your home.</p>
+                <ul class="ck-list">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Entry, sliding &amp; French doors
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Multi-point locking systems
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Fiberglass, steel &amp; aluminum options
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+                        Custom sizes &amp; decorative glass
+                    </li>
+                </ul>
+                <a href="/contact" class="btn btn-gold">Get a Free Door Quote &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Door Product Cards -->
 <section class="sec-alt">
     <div class="container">
-        <div class="section-hd">
-            <span class="section-label">Entry & Patio</span>
-            <h2>Impact Doors</h2>
-            <p class="section-sub">From grand entryways to expansive sliding glass walls, our doors combine beauty with Category 5 protection.</p>
-        </div>
         <div class="prod-grid">
             <div class="prod-card">
                 <span class="prod-badge">Entry Doors</span>
