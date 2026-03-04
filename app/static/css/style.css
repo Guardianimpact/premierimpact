@@ -184,9 +184,9 @@ h3{font-size:clamp(1.1rem,2vw,1.4rem)}
 .legal-date{font-size:.82rem;font-weight:600;color:var(--text3);margin-bottom:8px}
 
 /* ===== SMS CONSENT ===== */
-.consent-field{display:flex;align-items:flex-start;gap:10px;margin:4px 0 16px;padding:0}
-.consent-field input[type="checkbox"]{width:18px;height:18px;margin-top:2px;flex-shrink:0;cursor:pointer;accent-color:var(--gold)}
-.consent-field label{font-size:.72rem;color:var(--text3);line-height:1.6;cursor:pointer;font-weight:400;text-transform:none;letter-spacing:0}
+.consent-field{display:flex;align-items:flex-start;gap:8px;margin:0 0 16px;padding:0}
+.consent-field input[type="checkbox"]{width:16px;height:16px;min-width:16px;margin-top:1px;flex-shrink:0;cursor:pointer;accent-color:var(--gold)}
+.consent-field label{font-size:11px;color:var(--text3);line-height:1.5;cursor:pointer;font-weight:400;text-transform:none;letter-spacing:0}
 .consent-field label a{color:var(--gold);font-weight:600}.consent-field label a:hover{color:var(--gold-dk)}
 
 /* ===== OPT OUT ===== */
